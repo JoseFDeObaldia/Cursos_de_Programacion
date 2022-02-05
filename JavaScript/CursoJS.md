@@ -117,8 +117,6 @@ document.write(num1 <= num2);
 ```
 Notese que todos los operadores lógicos trabajan devolviendo valores booleanos, es decir valores de true o false.
 
-Otros operadores lógicos de compraración son los siguientes.
-
 Operador AND: si las dos afirmaciones son verdaderas devuelve true, caso contrario devuelve false.
 ```javascript
 afirmacion1 = num1 < num2;
@@ -375,196 +373,255 @@ class dog extends animal {
 ```
 Utilicemos nuestra clase "dog", recien creada:
 ```javascript
-
 //Creamos un objeto perrito de la clase dog, vemos que podemos usar los métodos de la clase animal sin ningun problema.
 const perrito = new dog("perro","2 años","gris","doberman");
 perrito.saludar();
 perrito.ladrar();
 ```
 
-
 ## Métodos de Cadenas.
 Son métodos para modificar las cadenas de texto o "string".
-/*  .concat() - junta dos o más cadenas y retorna una nueva.
-    .startWidth() - si una cadena termina con los caracteres de otra cadena, devuelve true, sino devuelve false.
-    .includes() - si una cadena puede encontrarse dentro de otra cadena, devuelve true, sino devuelve false.
-    .indexOf() - evuelve el indice del primer caracter de la cadena que le pasamos por parámetro en la cadena principal, si no existe, devuelve -1. Lee desde izquierda a derecha
-    .lastIndexof() - devuelve el indice del primer caracter de la cadena que le pasamos por parámetro en la cadena principal, si no existe, devuelve -1. Lee desde derecha a izquierda.
+1. .concat() - junta dos o más cadenas y retorna una nueva.
+2. .startWidth() - si una cadena termina con los caracteres de otra cadena, devuelve true, sino devuelve false.
+3. .includes() - si una cadena puede encontrarse dentro de otra cadena, devuelve true, sino devuelve false.
+4. .indexOf() - evuelve el indice del primer caracter de la cadena que le pasamos por parámetro en la cadena principal, si no existe, devuelve -1. Lee desde izquierda a derecha
+5. .lastIndexof() - devuelve el indice del primer caracter de la cadena que le pasamos por parámetro en la cadena principal, si no existe, devuelve -1. Lee desde derecha a izquierda.
+6. .repeat() - devuelve la misma cadena pero repetida la cantidad de veces especificada.
+7. .split() - divide la cadena como le pidamos. Nos devuelve un array.
+8. .substring() - Nos retorna un pedazo de la cadena que seleccionamos.
+9. .toLowerCase() - convierte una cadena a minuscula.
+10. .toUpperCase() - convierte una cadena a mayuscula.
+11. .toString() - convierte una cadena a string.
+12. .trim() - elimina espacios en blanco al principio y al final de una cadena.
+13. .trimEnd() - elimina los espacios al final de una cadena.
+14. .trimStart() - elimina los espacios en blanco al inicio de una cadena.
+15. .valueOf() - retorna el valor primitivo de un objeto string.
 
-    .repeat() - devuelve la misma cadena pero repetida la cantidad de veces especificada.
+## Métodos de arrays
+Al igual que los métodos de cadenas, estos son métodos para modificar los Arrays.
+1. .pop() - elimina el ultimo elemento de un array y lo devuelve.
+2. .shift() - elimina el primer elemento de un array y lo devuelve.
+3. .push() - Agrega un elemento al array al final de la lista.
+4. .reverse() - invierte el orden de los elementos en el array.
+5. .unshift() - agrega uno o más elementos al inicio del array y devuelve la nueva longitud del array.
+6. .sort() - ordena los elementos de un array localmente y devuelve el arreglo ordenado alfabeticamente.
+7. .splice() - cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos.
+8. .join() - une todos los elementos de una matriz en una cadena y la devuelve.
+9. .slice() - devuelve una parte del array dentro de un nueo array empezando por inicio hasta fin (fin no incluido).
+10. .filter() - ejecuta la funcion indicada por parámetros, una vez por cada elemento del array, y nos genera un nuevo array. Se pueden filtrar los elementos con operadores logicos.
+11. .forEach() - ejecuta la funcion indicada, una vez por cada elemento del array. Nos devuelve un nuevo array.
 
-    .split() - divide la cadena como le pidamos. Nos devuelve un array.
-    .substring() - Nos retorna un pedazo de la cadena que seleccionamos.
-    .toLowerCase() - convierte una cadena a minuscula.
-    .toUpperCase() - convierte una cadena a mayuscula.
-    .toString() - convierte una cadena a string.
-    .trim() - elimina espacios en blanco al principio y al final de una cadena.
-    .trimEnd() - elimina los espacios al final de una cadena.
-    .trimStart() - elimina los espacios en blanco al inicio de una cadena.
-    .valueOf() - retorna el valor primitivo de un objeto string.
-*/
 
-//METODOS DE CADENAS: Son métodos para modificar los Arrays.
-/*  .pop() - elimina el ultimo elemento de un array y lo devuelve.
-    .shift() - elimina el primer elemento de un array y lo devuelve.
-    .push() - Agrega un elemento al array al final de la lista.
-    .reverse() - invierte el orden de los elementos en el array.
-    .unshift() - agrega uno o más elementos al inicio del array y devuelve la nueva longitud del array.
-    .sort() - ordena los elementos de un array localmente y devuelve el arreglo ordenado alfabeticamente.
-    .splice() - cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos.
+## Objeto "math();": 
+Es una funcion muy util para realizar funciones matemáticas.
+1. .sqrt() - devuelve la raíz cuadrada positiva de un número.
+2. .cbrt() - devuelve la raíz cúbica real de un número.
+3. .max() - devuelve el mayor de cero o más numeros.
+4. .min() - devuelve el menor de cero o m´s numeros.
+5. .random() - devuelve unn número pseudo-aleatorio entre 0 y 1.
+6. .round() - redondea un número al entero más cercano.
+7. .fround() - devuelve la representacion flotante de precision simple más cercana de un número.
+8. .floor() - devuelve el mayor entero menor que o igual a un número.
+9. .trunc() - devuelve la parte entera del número x, la eliminación de los dígitos fraccionarios.
+10. .PI - nos devuelve el valor de Pi.
+11. .SQRT1_2 - raiz cuadrada de un medio.
+12. .SQRT2 - raiz cuadrada de 2.
+13. .E - constante de euler.
+14. .LN2 - logaritmo neperiano base 2.
+15. .lN10 - logaritmo natural base 10.
+16. .LOG2E - logaritmo de E, base 2.
+17. .LOG10E - logaritmo de E, base 10.
 
-    .join() - une todos los elementos de una matriz en una cadena y la devuelve.
-    .slice() - devuelve una parte del array dentro de un nueo array empezando por inicio hasta fin (fin no incluido).
 
-    .filter() - ejecuta la funcion indicada por parámetros, una vez por cada elemento del array, y nos genera un nuevo array. Se pueden filtrar los elementos con operadores logicos.
-    .forEach() - ejecuta la funcion indicada, una vez por cada elemento del array. Nos devuelve un nuevo array.
-*/
+## Uso y funciones de la consola. 
+El uso de la consola es fundamental para los desarrolladores, en la consola se puede escribir codigo javascript que se ejecutará con el código normal, se pueden retornar valores, mostrar errores y warnings entre muchas otras cosas. Aquí enumeramos algunos métodos muy útiles.
+1. .console.assert() - Nos da un mensaje de error si la condicion intorducida es falsa. No se utiliza más.
+2. .console.clear() - Limpia la consola.
+3. .console.error("Error") - Muesta un mensaje de error. 
+4. .console.info("Mensaje Informativo") - Muestra un mensaje informativo.
+5. .console.log("Mensaje Depurativo") - Muestra un mensaje depurativo.
+6. console.table(array) - Toma un argumento obligatorio "data", que debe ser un array o un objeto, y un parámetro adicional: "columns". Y nos muestra una tabla en consola.
+7. .console.warn("Mensaje de Advertencia") - Nos da un mensaje de advertencia. No se usa más.
+8. .console.dir(objeto) - Despliega una lista interactiva de las propiedades del objeto javascript especificado. No es estandar.
+9. .console.count(Math.PI) - Nos dice cuantas veces se ejecuto la funcion que le pasamos por parámetros.
+10. .console.countReset() - Resetea el contador.
+11. .console.group("grupo1") - Crea un grupo en la consola, donde podemos escribir pedazos de código.
+12. .console.groupEnd() - Elimina el grupo seleccionado.
+13. .console.groupCollapsed() - Nos muestra el grupo de instrucciones sin colapsarlo, es decir cerrado.
+14. .console.time() - Inicia un temporizador.
+15. .console.timeLog() - Registra el valor actual de un temporizador.
+16. .console.timeEnd() - Detiene un temporizador y nos devuelve el tiempo que paso.
 
-//Objeto math(): es una funcion que nos resume muchas funciones matemáticas.
-/*  .sqrt() - devuelve la raíz cuadrada positiva de un número.
-    .cbrt() - devuelve la raíz cúbica real de un número.
-    .max() - devuelve el mayor de cero o más numeros.
-    .min() - devuelve el menor de cero o m´s numeros.
-    .random() - devuelve unn número pseudo-aleatorio entre 0 y 1.
-    .round() - redondea un número al entero más cercano.
-    .fround() - devuelve la representacion flotante de precision simple más cercana de un número.
-    .floor() - devuelve el mayor entero menor que o igual a un número.
-    .trunc() - devuelve la parte entera del número x, la eliminación de los dígitos fraccionarios.
+## DOM: Document Object Model.
+El DOM es la estructura de objetos que genera el navegador cuando se carga un documento, este se puede alterar mediante Javascript para cambiar dinámicamente los contenidos y el aspecto de la página.
 
-    .PI - nos devuelve el valor de Pi.
-    SQRT1_2 - raiz cuadrada de un medio.
-    SQRT2 - raiz cuadrada de 2.
-    .E - constante de euler.
-    .LN2 - logaritmo neperiano base 2.
-    .lN10 - logaritmo natural base 10.
-    .LOG2E - logaritmo de E, base 2.
-    .LOG10E - logaritmo de E, base 10.
-*/
+1. Nodo: Es cualquier etiqueta del cuerpo del documento, como un parrafo o los imputs.
+2. HTML o Document: Es el nodo raíz del cual salen todos.
+3. Los comentarios y los atributos de las etiquetas definen nodos, pero lo veremos solo como informacion asociada al elemento HTML.
 
-//Uso y funciones de la consola. En la consola se puede escribir codigo javascript y se ejecutará con el código normal.
-console.assert(5 > 3); //nos da un mensaje de error si la condicion es falsa. No se usa más.
-console.clear(); //limpia la consola.
-console.error("Error"); //Muesta un mensaje de error. 
-console.info("Mensaje Informativo"); //muestra un mensaje informativo.
-console.log("Mensaje Depurativo"); //muestra un mensaje depurativo.
-console.table(array); //toma un argumento obligatorio: data, que debe ser un array o un objeto, y un parámetro adicional: columns. Y nos muestra una tabla en consola.
-console.warn("Mensaje de Advertencia"); //da un mensaje de advertencia. No se usa más.
-console.dir(objeto); //despliega una lista interactiva de las propiedades del objeto javascript especificado. No es estandar.
+## Métodos de seleccion de elementos:
+Son formas de seleccionar elementos y se aplican al documento. Veamos algunas de ellas:
+```javascript
+const valor = document.getElementById("idDelElementoHTML"); //Selecciona un elemento por ID.
+const valor = document.getElementsByTagName("p");           //Devuelve una coleccion de elementos, en este caso de los elementos "p" que existan.
 
-console.count(Math.PI); //nos dice cuantas veces se ejecuto la funcion que le pasamos por parámetros.
-console.countReset(); //resetea el contador.
+const valor = document.querySelector(".card .parrafoPrincipal");  //Selecciona el elemento que coincida con los selectores CSS dados.
+const valor = document.querySelectorAll(".parrafo");              //Selecciona todos los elementos con la clase parrafo y nos devuelve una lista de nodos.
+```
 
-console.group("grupo1"); //crea un grupo en la consola, donde podemos escribir pedazos de código.
-console.groupEnd(); //elimina el grupo seleccionado.
-console.groupCollapsed(); //nos muestra el grupo de instrucciones sin colapsarlo, es decir cerrado.
-
-console.time(); //inicia un temporizador.
-console.timeLog(); //registra el valor actual de un temporizador.
-console.timeEnd(); //detiene un temporizador y nos devuelve el tiempo que paso.
-
-//DOM: El DOM es la estructura de objetos que genera el navegador cuando se carga un documento y se puede alterar mediante Javascript para cambiar dinámicamente los contenidos y aspecto de la página. DOM es una abreviatura de Document Objet Model.
-
-//Nodo: Es cualquier etiqueta del cuerpo del documento, como un parrafo o los imputs.
-//HTML o Document: Es el nodo raíz del cual salen todos.
-//Los comentarios y los atributos de las etiquetas definen nodos, pero lo veremos solo como informacion asociada al elemento HTML.
-
-//Métodos de seleccion de elementos: Son formas de seleccionar elementos. Se aplican al documento.
-const valor = document.getElementById("idDelElementoHTML"); //selecciona un elemento por ID.
-const valor = document.getElementsByTagName("p"); //nos devuelve una coleccion de elementos "p", esto es porque un una página web puede haber varios elementos.
-const valor = document.querySelector(".card .parrafoPrincipal"); //selecciona el elemento que coincida con los selectores CSS dados.
-const valor = document.querySelectorAll(".parrafo"); //nos selecciona todos los elementos con la clase parrafo y nos devuelve una lista de nodos.
-
-//Métodos para definir, obtener y eliminar valores de atributos. Se aplican al elemento
+## Métodos para definir, obtener y eliminar valores de atributos. 
+Son métodos que se aplican elemento y como bien dice el título, sirven para definir, obtener y eliminar valores de atributos. Veamos algunos de ellos.
+```javascript
+//Se seleccionan los elementos que contengan la clase ".claseImput" con el método de seleccion de elementos ".querySelector()".
 const inputEnHTML = document.querySelector(".claseImput");
 
-inputEnHTML.setAttribute("type", "text"); //.setAtribute(); modifica el valor de un atributo. En este caso cambia el tipo del imput
+//.setAtribute() - Modifica el valor de un atributo. En este caso cambia el tipo del imput
+inputEnHTML.setAttribute("type", "text");
 
-var valorDelAtributo = inputEnHTML.getAttribute("type"); //.getAtribute(); devuelve el valor de un atributo. En este caso devuelve el valor del atributo.
+//.getAtribute() - Devuelve el valor de un atributo. En este caso devuelve el valor del atributo.
+var valorDelAtributo = inputEnHTML.getAttribute("type");
 
-inputEnHTML.removeAttribute("type"); //remueve el atributo seleccionado de un elemento. Ahora el input no tiene "type".
+//Remueve el atributo seleccionado de un elemento. Ahora el input no tiene entre sus atributos el "type".
+inputEnHTML.removeAttribute("type");
+```
 
-//ATRIBUTOS GLOBALES: Son los atributos que poseen todos los elementos HTML. Se los utiliza dentro de los métodos de seleccion de elementos
 
-/*
-class - lista de clases del elemento separadas por espacios.
-contentEditable - indicamos si el elemento puede ser modificable por el usuario. Valor Booleano
-dir - indica la direccionalidad del texto.
-hidden - indica si el elemento aún no es, o ya no es relevante.
-id - define un identificado único.
-style - contiene declaraciones de estilo CSS para ser aplicadas al elemento.
-tabIndex - indica si el elemento puede obtener un focus de input. Es decir si se puede seleccionar o no.
-title - contiene un texto con informacion relacionada al elemento al que pertenece.
-*/
+## Atributos Globales:
+Son los atributos que poseen todos los elementos HTML. Se los utiliza dentro de los métodos de seleccion de elementos.
 
-//ATRIBUTO STYLE: este atributo nos permite enviar código CSS.
+1. class - Lista de clases del elemento separadas por espacios.
+2. contentEditable - Indicamos si el elemento puede ser modificable por el usuario. Valor Booleano
+3. dir - Indica la direccionalidad del texto.
+4. hidden - Indica si el elemento aún no es, o ya no es relevante.
+5. id - Define un identificado único.
+6. style - Contiene declaraciones de estilo CSS para ser aplicadas al elemento.
+7. tabIndex - Indica si el elemento puede obtener un focus de input. Es decir si se puede seleccionar o no.
+8. title - Contiene un texto con informacion relacionada al elemento al que pertenece.
+
+
+## Atributo Style:
+Este atributo nos permite modificar el código CSS o lo que es lo mismo, los estilos de un elemento.
+```javascript
+//Seleccionamos los elementos con la clase ".titulo".
 const titulo = querySelector(".titulo");
+
+//modificamos los estilos del elemento titulo, que posee la clase ".titulo".
 titulo.style.color = red;
 titulo.style.color = "#fff";
 titulo.style("color", "#fff");
+titulo.style.backgroundColor = "#000";
+```
+Notese que el uso del guion medio en javascript no esta permitido, por lo que a las propiedades CSS como "background-color", debemos escribirlas con camel case, de este modo nos queda "backgroundColor".
 
-titulo.style.backgroundColor = "#000"; //notese que a las propiedades en CSS como background-color, para escribirlas en javascript, debe hacerse con camel case, quedando backgroundColor.
+## Class List:
+Es un método con muchas funciones menores, el cual nos permite modificar las clases asociadas a algun elemento. Esto nos es  útil cuando trabajamos con frameworks como bootstrap.
+```javascript
+const titulo = querySelector(".titulo");
 
-//CLASSLIST. Es un método o funcion con muchas funciones menores, nos permite modificar elementos.
-titulo.classList.add("grande"); //añade una clase, en este caso la clase "grande".
-titulo.classList.remove("grande"); //remueve una clase, en este caso la clase "grande".
-let valor = titulo.classList.item(2); //devuelve la clase del índice especificado, si hay tres clases devolvera la segunda y la guardara en la variable valor.
-titulo.classList.contains("grande"); //verifica si el elemento posee o no, la clase especificada. Devuelve un valor booleano.
-titulo.classList.replace("grande", "chico"); //reemplaza una clase por otra. En este caso la clase "grande" por la clase "chico". Si la clase "grande" no existe, nos devuelve true.
-titulo.classList.toggle("grande", true); //Si no tiene la clase especificada, la agrega, si ya la tiene, la elimina. Trabaja con valor booleano. El segundo parámetro es opcional y es para forzar que deje o quite la clase siempre, con "true" deja siempre la clase y con "false" elimina siempre la clase. Este segundo parámetro no lo soportan todos los navegadores antiguos.
+titulo.classList.add("grande");       //Añade una clase, en este caso la clase "grande".
+titulo.classList.remove("grande");    //Remueve una clase, en este caso la clase "grande".
+let valor = titulo.classList.item(2); //Devuelve la clase del índice especificado, si hay tres clases devolvera la segunda y la guardara en la variable valor.
+titulo.classList.contains("grande");         //Verifica si el elemento posee o no, la clase especificada. Devuelve un valor booleano.
+titulo.classList.replace("grande", "chico"); //Reemplaza una clase por otra. En este caso la clase "grande" por la clase "chico". Si la clase "grande" no existe, nos devuelve true.
 
-//ObTENCION Y MODIFICACION DE ELEMENTOS:
-let result = titulo.textContent; //devuelve el texto de cualquier nodo, sin el estilo CSS.
-let result = titulo.innerHTML; //devuelve el contenido de un elemento. Se lo puede pasar por consola.
-let result = titulo.outerHTML; //devuelve el código HTML completo del elemento. Se lo puede pasar por consola.
 
-//CREACION DE ELEMENTOS:
-const item = document.createElements("LI"); //creamos un elemento "li";
-const textoDelItem = document.createTextNode("Este es un item de la lista"); //creamos un nodo con texto.
-const fragmento = document.createDocumentFragment(); //creamos una porcion de código HTML. La ventaja de esto es que podemos crear muchos elementos y agregarlos solo una vez. De este modo la PC no tiene que regenerar la interfaz cadda vez que se agrega algo.
+titulo.classList.toggle("grande", true);     
+/*Si no tiene la clase especificada, la agrega, si ya la tiene, la elimina. Trabaja con valor booleano. 
+El segundo parámetro es opcional y es para forzar que deje o quite la clase siempre, con "true" deja siempre la clase y con "false" elimina siempre la clase. 
+Este segundo parámetro no lo soportan todos los navegadores antiguos.*/
+```
+## Obtenicion y Modificacion de Elementos:
+```javascript
+let result = titulo.textContent; //Devuelve el texto de cualquier nodo, sin el estilo CSS.
+let result = titulo.innerHTML;   //Devuelve el contenido de un elemento. Se lo puede pasar por consola.
+let result = titulo.outerHTML;   //Devuelve el código HTML completo del elemento. Se lo puede pasar por consola.
+```
 
-//un uso práctico de createDocumentFragment() para crear 20 elementos "li".
-const contenedor = document.querySelector(".contenedor");
-const fragmento = document.createDocumentFragment();
+## Creación de Elementos:
+```javascript
+const item = document.createElements("LI");                                  //Creamos un elemento "li";
+const textoDelItem = document.createTextNode("Este es un item de la lista"); //Creamos un nodo con texto.
+const fragmento = document.createDocumentFragment();                         //Creamos una porcion de código HTML. 
+```
+De los trés metodos de creacion de elementos el más util es ".createDocumentFragment()", la ventaja del mismo es que podemos crear muchos elementos y agregarlos a todos de una vez. De este modo la PC no tiene que regenerar la interfaz cadda vez que se agrega algo nuevo.
+Veamos por ejemplo un uso práctico de createDocumentFragment() para crear 20 elementos "li".
+```javascript
+const contenedor = document.querySelector(".contenedor"); //Seleccionamos un elemento contenedor, el cual almacenara todos los nuevos elementos.
+const fragmento = document.createDocumentFragment();      //Creamos una variable que almacenara la fracción de nuestro documento.
+
+//Creamos veinte elementos "li" que contengan el texto "este es un elemento de la lista" y los agregamos al fragmento.
 for (let i = 0; i < 20; i++) {
     const item = document.createElement("LI");
     item.innerHTML = "Este es un item de la lista";
     fragmento.appendChild(item);   
 }
+//Agregamos el fragmento al contenedor.
 contenedor.appendChild(fragmento);
+//Sobreescribimos el contenedor y lo imprimimos en pantalla.
 document.write(contenedor);
+```
 
-//METODOS DE CHILDS: Son métodos que se aplican especificamente a los hijos de algún elemento.
-const primerHijo = contenedor.firstChild(); //nos devuelve el primer hijo del contenedor, tambien cuenta como elementos a los espacios en blanco.
-const ultimoHijo = contenedor.lastChild(); //nos devuelve el ultimo hijo del contenedor, tambien cuenta como elementos a los espacios en blanco.
-const elementoHijo = contenedor.firstElementChild(); //nos devuelve el primer elemento hijo. No tiene en cuenta los espacios.
-const elementoHijo = contenedor.lastElementChild(); //nos devuelve el ultimo elemento hijo. No tiene en cuenta los espacios.
-const elementoHijo = contenedor.childNodes(); //nos devuelve todos los nodos hijos en un node list, cuenta los espacios.
-const elementoHijo = contenedor.children(); //nos devuelve todos los elementos secundarios, no cuenta ni los espacios, ni el texto, ni los comentarios. Lo devuelve en un HTML collection.
+## Métodos de Childs:
+Son métodos que se aplican especificamente a los hijos de algún elemento.
+```javascript
+//Devuelve el primer hijo del contenedor, tambien cuenta como elementos a los espacios en blanco.
+const primerHijo = contenedor.firstChild();
 
+//Devuelve el ultimo hijo del contenedor, tambien cuenta como elementos a los espacios en blanco.
+const ultimoHijo = contenedor.lastChild();
+
+//Devuelve el primer elemento hijo. No tiene en cuenta los espacios.
+const elementoHijo = contenedor.firstElementChild();
+
+//Devuelve el ultimo elemento hijo. No tiene en cuenta los espacios.
+const elementoHijo = contenedor.lastElementChild();
+
+//Devuelve todos los nodos hijos en un node list, cuenta los espacios.
+const elementoHijo = contenedor.childNodes();
+
+//Devuelve todos los elementos secundarios, no cuenta ni los espacios, ni el texto, ni los comentarios. Lo devuelve en un HTML collection
+const elementoHijo = contenedor.children();
+
+
+//Uso de ".replaceChild()" Seleccionamos el h2 antiguo, creamos un h2 nuevo y luego efectuamos el reemplazo.
 const h2_antiguo = document.querySelector(".h2");
 const h2_nuevo = document.createElement("H2");
-const parrafo = contenedor.replaceChild(h2_nuevo, h2_antiguo); //con replaceChild reemplazamos en el contenedor el h2_antiguo y colocamos el h2_nuevo.
+const parrafo = contenedor.replaceChild(h2_nuevo, h2_antiguo); 
+//Con replaceChild reemplazamos en el contenedor el h2_antiguo y colocamos el h2_nuevo.
 
-contenedor.removeChild(h2_nuevo); //eliminamos el elemento h2_nuevo del contenedor.
 
-let respuesta = contenedor.hasChildNodes(); //verifica si el contenedor tiene elementos hijos o no. Si tiene hijos devuelve true, sino devuelve false.
+//Eliminamos el elemento h2_nuevo del contenedor.
+contenedor.removeChild(h2_nuevo);
+
+//Verifica si el contenedor tiene elementos hijos o no. Si tiene hijos devuelve true, sino devuelve false.
+let respuesta = contenedor.hasChildNodes();
 if(respuesta == verdadero) {
     alert("Contenedor tiene hijos");
 } else {
     alert("Contenedor no tiene hijos");
 }
+```
 
-//PROPIEDADES DE PARENTS:
-console.log(h2_antiguo.parentElement()); //Esta propiedad selecciona el elemento HTML padre de un hijo especificado.
-console.log(h2_antiguo.parentNode()); //Esta propiedad selecciona el nodo padre de un hijo especificado. Sirve para casos puntuales donde el padre no es una etiqueta HTML.
+## Propiedades de Parents:
+```javascript
+console.log(h2_antiguo.parentElement());  //Esta propiedad selecciona el elemento HTML padre de un hijo especificado.
+console.log(h2_antiguo.parentNode());     //Selecciona el nodo padre de un hijo especificado. Util en casos donde el padre no es una etiqueta HTML.
+```
+## Propiedades de "Siblings" o elementos hermanos.
+```javascript
+console.log(h2_antiguo.nextSibling());            //Muestra el siguiente nodo hermano.
+console.log(h2_antiguo.previousSibling());        //Muestra el anterior nodo hermano.
+console.log(h2_antiguo.nextElementSibling());     //Muestra el siguiente elemento hermano.
+console.log(h2_antiguo.previousElementSibling()); //Muestra el anterior nodo hermano.
+```
 
-//PROPIEDADES DE SIBLINGS, ELEMENTOS HERMANOS:
-console.log(h2_antiguo.nextSibling()); //muestra el siguiente nodo hermano.
-console.log(h2_antiguo.previousSibling()); //muestra el anterior nodo hermano.
-console.log(h2_antiguo.nextElementSibling()); //muestra el siguiente elemento hermano.
-console.log(h2_antiguo.previousElementSibling()); //muestra el anterior nodo hermano.
-
-
-//CLOSEST. Selecciona el elemento ascendente mas cercano con la clase que coincida con nuestro selector.
+## Closest.
+Por ultimo veamos otra propiedad curiosa. Closest selecciona el elemento ascendente mas cercano con la clase que coincida con nuestro selector. Es util para seleccionar el elemento padre mas cercano.
+```javascript
+//Seleccionamos el elemento con la clase ".div__3", el cual esta encerrado dentro de un ".div__2".
 const div = document.querySelector(".div__3");
-console.log(div.closest(".div__3")); //en este caso guardamos en la variable "div" un div__3 que esta encerrado dentro de un div__2. Usando la propiedad closest se imprimiría en pantalla "div__2".
+
+//Imprimimos el elemento padre más cercano a nuestro elemento con la clase ".div__3", este elemento es un .div__2
+console.log(div.closest(".div__3"));
+```
+En este caso guardamos en la variable "div" un div__3 que esta encerrado dentro de un div__2. Usando la propiedad closest se imprimiría en pantalla "div__2".
