@@ -1,19 +1,40 @@
-//CURSO DE JAVASCRIPT NIVEL BÁSICO--------------------
+#Curso de Javascript - Nivel Basico
 
-//VARIABLES. Las variables globales se declaran con var y las locales, restringidas al bloque de codigo en donde se definen, se declaran con let. El tipo de dato no se escribe, pero este se inicializa al declarar la variable, es decir no tenemos que decirle que la variable sera un "string", pero una vez que la inicializamos dandole un string, no podemos almacenar en ella un "int" o un "boolean".
+Este es un curso de Javascript completo, siguiendo los contenidos del edutuber "Lucas Dalto".
+
+##Variables:
+
+Las varables son espacios que los programadores reservamos en la memoria RAM de  nuestro ordenador para poder guardar datos de manera temporal y usarlos en el programa.
+Existen dos tipos de variables, las globales, que se declaran con "var" y las locales, restringidas al bloque de codigo en donde se definen, que se declaran con "let". 
+En Javascript el tipo de dato no se escribe, pero este se inicializa al declarar la variable, es decir no tenemos que decirle que la variable sera un "string", pero una vez que la inicializamos dandole un string, no podemos almacenar en ella un "int" o un "boolean".
+
+```javascript
 var recipiente = 'papel';
 let variableLocal = 553;
 let number1 = 6, number2 = 2, number3 = 39;
-let numero = null; //esta es una forma de inicializar las variables sin forzarles un valor por defecto. Le estamos dando un valor nulo.
+let numero = null;
+```
+Dandole el valor de inicio "null", inicializamos la variable sin forzar un valor por defecto.
 
-//CONSTANTES. Se declaran con const y deben inicializarse si o si al declararlas.
+##Constantes:
+
+Se declaran con const y deben inicializarse obligatoriamente.
+```javascript
 const numero = 2;
+```
 
-//ALERT y funcion PROMPT. Con alert generamos alertas emergentes en la pa´gina web. Con prompt mostramos una alerta y a la vez pedimos datos generando una casilla de texto dentro del alert..
-var nombre = prompt("Hola, decime tu nombre");
-alert("Hola" + nombre) + "como andas?";
+##alert() y prompt()
 
-//OPERADORES DE ASIGNACION: Un operador de asignacion asigna un valor al operando de la izquierda basado en el valor del operando de la derecha.
+Sos funciones para mostrar alertas. Con alert generamos alertas emergentes en la pagina web y con prompt mostramos el alert con una casilla de texto dentro. Esto nos permite obtener datos.
+```javascript
+var nombre = prompt("Hola, ¿como te llamas?");
+alert("Hola" + nombre) + "¿Que tal tu dia?";
+```
+
+##Operadores de Asignacion: 
+Un operador de asignacion asigna un valor al operando de la izquierda basado en el valor del operando de la derecha.
+
+```javascript
 let numero = 10;
 numero = 5; //Asignacion
 numero += 5; //Asignacion de Adicion
@@ -23,7 +44,13 @@ numero /= 5;//Asignacion de division
 numero %= 5;//Asignacion de resto
 numero **= 5;//Asignacion de exponenciacion
 
-//OPERADORES ARITMÉTICOS: toman valores numéricos (ya sean literales o variables) como sus operandos y retornan un valor numérico único.
+```
+
+
+##Operadores Aritmeticos.
+Son operadores que toman valores numericos (ya sean literales o variables) como sus operandos y retornan un valor numerico unico.
+
+```javascript
 let num1 = 10, num2 = 5;
 num1 + num2; //adicion
 num1--; //sustraccion
@@ -33,6 +60,7 @@ num1 / num2; //division de dos valores
 num1**num2;  //potencia de base num1
 num1 * num2; //producto
 num1 - num2; //resta
+```
 
 //DOCUMENT.WRITE: document.write es una funcion simple para imprimir texto en la pantalla sin inyectar html. El texto aparece sin formato.
 
