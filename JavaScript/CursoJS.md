@@ -20,8 +20,8 @@ Se declaran con const y deben inicializarse obligatoriamente.
 const numero = 2;
 ```
 
-## alert() y prompt()
-Son funciones para mostrar alertas. Con alert generamos alertas emergentes en la pagina web y con prompt mostramos el alert con una casilla de texto dentro. Esto nos permite obtener datos.
+## alert(); y prompt();
+Son funciones para mostrar alertas. Con "alert();" generamos alertas emergentes en la pagina web y con "prompt();" mostramos una alerta emergente que además cuente una casilla de texto dentro. Esto último nos permite pedirle datos al usuario.
 ```javascript
 var nombre = prompt("Hola, ¿como te llamas?");
 alert("Hola" + nombre) + "¿Que tal tu dia?";
@@ -54,8 +54,8 @@ num1 * num2; //producto
 num1 - num2; //resta
 ```
 
-## document.write()
-document.write(); Es una funcion simple para imprimir texto con o sin codigo HTML en la pantalla.
+## document.write();
+La funcion "document.write();" es una funcion simple para imprimir texto con o sin codigo HTML en la pantalla.
 
 ## Forzar un String:
 Supongamos que tenemos las siguentes dos variables de tipo entero "int".
@@ -75,58 +75,95 @@ frase = `Soy ${nombre} y estoy caminando`;
 document.write(frase);
 ```
 
-//ESCAPE DE COMILLAS. Si queremos poner comillas dobles en nuestra oracion o si queremos poner comillas simples en nuestra oracion, debemos encerrar todo el string con el tipo de comiila opuesto. Esto se llama escape de comillas.
-frase = "mi nombre es 'lucas', como te va?"
-frase = 'mi nombre es "lucas", como te va?'
+## Escape de Comillas: 
+Supongamos que queremos imprimir una cadena de texto que contenga comillas dentro de ella, ya que esto generaria un problema de interpretación para la máquina se han generado dos reglas para sortearlo.
+1. Si se desea usar comillas dobles "" en nuestra oracion, debemos encerrar el string con comillas simples.
+2. Si queremos colocar comillas simples en nuestra oracion, debemos encerrar todo el string con comillas dobles.
+```javascript
+frase = "mi nombre es 'lucas', ¿que tal todo?"
+frase = 'mi nombre es "lucas", ¿que tal todo?'
 document.write(frase);
+```
 
-//OPERADORES LOGICOS. Son operadores entre variables y nos sirven para realizar validaciones logicas.
+
+## Operadores Lógicos:
+Son operadores que se utilizan entre variables y nos permiten realizar validaciones logicas. Este código imprime las validaciones en la pantalla ya que usa la función "document.write();".
+```javascript
+//Generamos dos numeros que utilizaremos para las validaciones.
 let num1 = 23;
 let num2 = "13";
-document.write(num1 == num2); //validamos si son iguales, no diferencia entre tipos de dato
-document.write(num1 != num2); //validamos si son distintos
-document.write(num1 === num2); //validamos si son estrictamente iguales, es decir si el valor es el mismo y ademas es el mismo tipo de dato
-document.write(num1 !== num2); //validamos si son estrictamente desiguales, es distinto valor y distinto tipo de dato
-document.write(num1 > num2); //mayor
-document.write(num1 < num2); //menor
-document.write(num1 >= num2); //mayor o igual
-document.write(num1 <= num2); //menor o igual
 
-//Otros operadores lógicos de compraración son los siguientes, y al igual que los anteriores comparan entre variables y devuelven un valor booleano.
-num1 = 12, num2 = 24;
+//Con el operador == validamos si su valor es igual.
+document.write(num1 == num2);
 
-//operador AND, si las dos afirmaciones son verdaderas devuelve true, sino devuelve false.
+//Con el operador != validamos si su valor es desigual.
+document.write(num1 != num2);
+
+//Con los operadores === y !== validamos si son estrictamente iguales o desiguales respectivamente, es decir validamos la igualdad o desigualdad del valor y la igualdad o desigualdad del tipo de dato.
+document.write(num1 === num2);
+document.write(num1 !== num2);
+
+//Con > validamos si num1 es mayor a num2. 
+document.write(num1 > num2);
+
+//Con > validamos si num1 es menor a num2.
+document.write(num1 < num2);
+
+//Con > validamos si num1 es mayor o igual a num2.
+document.write(num1 >= num2);
+
+//Con > validamos si num1 es menor o igual a num2.
+document.write(num1 <= num2);
+```
+Notese que todos los operadores lógicos trabajan devolviendo valores booleanos, es decir valores de true o false.
+
+Otros operadores lógicos de compraración son los siguientes.
+
+Operador AND: si las dos afirmaciones son verdaderas devuelve true, caso contrario devuelve false.
+```javascript
 afirmacion1 = num1 < num2;
 afirmacion2 = num1 != num2;
 document.write(afirmacion1 && afirmacion2);
-
-//operador OR, si al menos una afirmacion es verdadera, devolvera true, sino devolvera false.
+```
+Operador OR, si al menos una afirmacion es verdadera, devolvera true, sino devolvera false.
+```javascript
 afirmacion1 = num1 < num2;
 afirmacion2 = num1 == num2; //esto es falso
 document.write(afirmacion1 && afirmacion2);
-
-//operador NOT, devuelve el valor opuesto, si la afirmacion1 es verdadera, el operador not devolvera false.
+```
+Operador NOT, devuelve el valor opuesto, es decir que si la afirmacion1 es verdadera, el operador not devolvera false.
+```javascript
 afirmacion1 = num1 < num2;
 afirmacion2 = num1 != num2;
 document.write(!afirmacion1);
+```
 
-//CONDICIONALES IF-ELSE: son estructuras que engloban porciones de codigo y se ejecutan cuando una condicion es verdadera. La condicion a usar debe dar un valor booleano.
+
+## Sentencia Condicional "if-else":
+Son estructuras que engloban porciones de codigo y se ejecutan cuando una condicion es verdadera. La condicion a usar debe dar un valor booleano.
+```javascript
 nombre1 = "juancito";
 nombre2 = "pedro";
+
 if (nombre1 == nombre2) {
     alert("Los nombres son idénticos");
 } else {
     alert(`Los nombres: ${nombre1} y ${nombre2} son distintos`);
 }
+```
 
-//ARRAYS. Son arreglos de datos donde se pueden almacenar muchas variables, sin importar el tipo de variable.
-arrayGenerico = ["pedro", false, 24, "Buenos Aires", 1.90, "Manzana"];
+## Arrays:
+Son arreglos de datos donde se pueden almacenar muchas variables, en ellos no importa el tipo de variable ya que los espacios en memoria aceptan todo tipo de datos.
+```javascript
+arrayDeEjemplo = ["pedro", false, 24, "Buenos Aires", 1.90, "Manzana"];
 
-document.write(arrayGenerico); //Para imprimir todo el array.
-document.write(arrayGenerico[0]); //Para mostrar el primer elemento, es decir el de la posicion cero.
+document.write(arrayGenerico); //Imprimimos todo el array.
+document.write(arrayGenerico[0]); //Imprimimos el primer elemento del array, es decir el elemento con la posicion cero.
+```
 
-//ARRAY ASOCIATIVO: es un array que asocia cada dato con un identificador, este identificador reemplaza al numero de posicion. La ventaja de esto es que solicitar datos es mucho más intuitivo
-
+Array Asociativo: Es un array que asocia cada dato con un identificador y este identificador reemplaza al numero de posicion. Al usar arrays asociativos tenemos la ventaja de que la toma de datos datos es mucho más intuitiva.
+```javascript
+//Generamos un array llamado "pc".
 let pc = {
     nombre: "Juanito-PC",
     procesador: "Intel Core I7",
@@ -135,7 +172,8 @@ let pc = {
     pantalla = "16 pulgadas",
     sistema: "Windows 10"
 }
-//Para imprimir el array debemos guardar los datos en una varable y luego llamar a la funcion document.write()
+
+//Imprimimos el array, para ello debemos guardar los datos en una serie de varables que luego mandaremos a llamar, dentro de la funcion "document.write();".
 let nombre = pc["nombre"], procesador = pc["procesador"], ram = pc["ram"], almacenamiento = pc["almacenamiento"], pantalla = pc["pantalla"], sistema = pc["sistema"];
 
 frase = `El nombre de la PC es: ${nombre} <br>
@@ -144,11 +182,15 @@ frase = `El nombre de la PC es: ${nombre} <br>
          El almacenamiento en disco es: ${almacenamiento} <br>
          El tamaño de la pantalla es: ${pantalla} <br>
          El sistema operativo es: ${sistema} <br>`;
+
 document.write(frase);
+```
 
-//BUCLES E ITERACIONES: Son porciones de codigo que se ejecutan en bucle siempre y cuando se cumpla una condicion. La misma debe retornar valores booleanos.
+## Bucles:
+Son estructuras sintácticas que nos permiten ejecutar porciones de codigo de manera iterada, mientras se cumpla una condicion. La misma debe retornar valores booleanos.
 
-//While es un bucle no definido que se ejecuta siempre que la condicion se cumpla, la sentencia break nos permite cortar la ejecucion del bucle y salir de el.
+Bucle While: Es un bucle no definido que se ejecuta siempre que la condicion retorne "true", la sentencia break nos permite cortar la ejecucion del bucle y salir de el.
+```javascript
 numero = 0;
 while (numero < 1000) {
     document.write(numero);
@@ -158,17 +200,22 @@ while (numero < 1000) {
         break;
     }
 }
+```
 
-//La sentencia do-while nos garantiza que el bucle se ejecute al menos una vez.
+Sentencia do-while: Este bucle es una variacion del bucle while y nos garantiza que la iteracion se ejecute al menos una vez, ya que ejecuta las instrucciones y luego verifica que la condicion se siga cumpliendo.
+```javascript
 numero = 0;
 do {
     document.write(numero + "<br>");
     numero++;
 } while (numero > 6); 
+```
 
-//For: Este es un bucle definido, es decir que se le asigna un numero de ejecuciones especifico. Se declara una variable contador que se llama "index" o "i". La sentencia break tambien funciona aquí. La sentencia continue, lo que hace es saltarse el bucle en ese valor de "i", y pasar a la siguiente vuelta.
+Bucle for: Este es un bucle del tipo definido, es decir que se le asigna un numero de ejecuciones especifico. Para utilizarlo, en el apartado de la condicion se declara una variable contador que se llama "index" o "i", luego se escribe la condicion separada por comas y por último se escribe el incremento o decremento tambien separado por comas.
+```javascript
 for (let i = 0; i < 10; i++) {
     document-write(i + "<br>");
+
     if (i == 7) {
         break;
     }
@@ -176,69 +223,83 @@ for (let i = 0; i < 10; i++) {
         continue;
     }
 }
+```
+La sentencia break tambien funciona aquí. Luego la sentencia continue tiene la funcionalidad de "saltarse" el bucle de instrucciones en el valor especificado de "i", y luego proseguir con la siguiente vuelta.
 
-//"for in" y "for of". Son dos sentencias que nos sirven para trabajar con arreglos. Con "for in" asignamos una variable contador que recorra el arreglo (en este caso el arreglo es animales), y luego devolvemos la posicion de cada elemento en el arreglo.
+
+Sentencias "for in" y "for of": Son dos sentencias que nos permiten trabajar con arreglos. Con "for in" asignamos una variable contador que recorra el arreglo (en este caso el arreglo es animales), y luego devolvemos la posicion de cada elemento en el arreglo.
 let animales = ["gato", "perro", "perico", "cobayo"];
+```javascript
 for (animal in animales) {
-    document.write(animal + "<br>"); //Posicion de cada elemento en el arreglo.
-    document.write(animales[animal] + "<br>"); //Valor de cada elemento en el arreglo.
+    document.write(animal + "<br>");            //Posicion de cada elemento en el arreglo.
+    document.write(animales[animal] + "<br>");  //Valor de cada elemento en el arreglo.
 }
-//Con "for of" nos muestra directamente el valor de cada elemento directamente.
+```
+Con "for of" podemos mostrar el valor de cada elemento de manera más directa.
+```javascript
 for (animal of animales) {
     document.write(animal + "<br>");
 }
+```
 
-//funciones: Son trozos de codigo que se pueden reutilizar al invocarlos. Se declaran con "function", se les coloca un nombre y se le pasan parámetros por los paréntesis. Luego se ejecuta el código encerrado entre las llaves. Tambien se puede hacer que la funcion retorne un valor, esto se utiliza para las funciones que realizan cálculos y es util para guardar el trabajo de la funcion. La sentencia return tambien finaliza la ejecucion de la funcion.
-function funcionSuma(num1 , num2) { //las variables declaradas en los paréntesis tienen alcance regional y solo existen en la funcion
-    let res = num1 + num2;//las variables declaradas en la funcion necesitan el let para ser regionales, en cambio serán de alcance global y traerán problemas
-    document.write(res + "<br>");
+## Funciones:
+Son trozos de codigo que se pueden reutilizar al invocarlos. Su sintaxis es sencilla, se declaran con la palabra "function" y se les coloca un nombre, luego se le pasan parámetros a traves de un par de paréntesis y por último se escribe el código a reutilizar encerrado entre llaves. 
+Tambien es posible hacer que la funcion retorne un valor utilizando la sentenia "return();", cabe aclarar que esta sentencia además finaliza la ejecucion de la funcion.
+```javascript
+function funcionSuma(num1 , num2) {
+    let resultado = num1 + num2;
+    document.write(resultado + "<br>");
 
-    return res; //ademas de imprimir el resultado, retornamos el resultado para guardarlo en una variable.
+    return resultado;
 }
-//para llamar a la funcion simplemente invocamos su nombre y le pasamos los parámetros por los paréntesis.
-funcionSuma (3, 2); //llamando a la funcion y ejecutandola
-let valorRetorno = funcionSuma (6,3); //llamando a la funcion y guardando el valor de retorno en una variable.
+```
+Algunas aclaraciones para el uso de funciones:
+1. Las variables declaradas en los paréntesis tienen alcance regional y solo existen en la funcion, por lo que no es necesario colocar let.
+2. Las variables declaradas dentro de la funcion si necesitan el let para ser regionales, de no colocárselo las mismas serán de alcance global y pueden traer problemas de conflictos.
 
-/*  Conceptos de POO:
-    Clase: Es una plantilla que contendra todas las características o atributos de nuestro objeto (las variables), y todas las cosas que puede hacer nuestro objeto (los métodos). Se utiliza como una plantilla para objetos genéricos. Por ejemplo podemos crear una clase "usuario()", la cual tendra los métodos "notificar()", "consultarSaldo()", "modificar¨Perfil()" y "verCompras()".
-   
-    Atributos: Son todas las caracteristicas que tendra nuestro objeto, es decir las variables que el objeto usará. Estas variables se declaran en la plantilla clase, dentro de una funcion especial llamada contructor.
+Para llamar a la funcion y ejecutarla debemos simplemente invocar su nombre y pasarle los parámetros a través de los paréntesis.
+```javascript
+funcionSuma (3, 2);                    //Llamando a la funcion.
+let valorRetorno = funcionSuma (6,3);  //Llamando a la funcion y guardando el valor de retorno en una variable.
+```
 
-    Metodos: Los métodos son funciones clásicas, solo que tienen una sintaxis especial que unicamente se puede usar dentro de la clase.
+## Conceptos de POO:
+La programación orientada a objetos es un paradigma de programacion en donde se busca crear elementos funcionales de manera sencilla e intuitiva. Para ello creamos en primera instancia clases o plantillas generales, que nos permitan objetos diversos pero con cualidades o atributos similares y luego utilizar funciones o métodos para que nuestro objeto adquiera funcionalidad. 
+Su utilidad es que podemos resumir mucho código de forma intuitiva.
 
-    Objeto: Es el resultado de instanciar nuestra clase, es decir el elemento que surge cuando llamamos a una clase y la usamos. Este elemento nuevo es un objeto propiamente dicho.
+1. Clase: Es una porción de código que contendra todas las características o atributos de nuestro objeto (las variables), y todas las cosas que puede hacer nuestro objeto (los métodos). Se utiliza como una base para objetos genéricos. Por ejemplo podemos crear una clase "usuario();" la cual tendra los métodos "notificar();", "consultarSaldo();", "modificar¨Perfil();" y "verCompras();".
+2. Objeto: Es el resultado de instanciar nuestra clase, es decir el elemento que surge cuando llamamos a una clase y la usamos. Este elemento nuevo es un objeto propiamente dicho.
+3. Atributos: Son todas las caracteristicas que tendra nuestro objeto, es decir las variables. Estas se declaran en la "plantilla" clase, dentro de una funcion especial llamada contructor.
+4. Metodos: Los métodos son simplemente funciones clásicas, solo que tienen una sintaxis especial que unicamente se puede usar dentro de la clase.
+5. Constructor: Es una funcion especial y obligatoria que debe tener cualquier clase, aqui se inicializan las variables o atributos que tendrá nuestro objeto.
+6. Métodos estaticos, son métodos que se pueden utilizar sin necesidad de definir ningún objeto. Se los puede llamar y usarlos sin antes crear al objeto.
+7. Polimorfismo: Es la capacidad de un objeto de comportarse de manera distinta dependiendo de los valores de las variables o atributos.
+De esta manera podemos crear un método "notificar();" en una clase "user();" y hacer que este método envie un mail, un whatsapp o un mensaje de texto dependiendo de los atributos que tenga el objeto creado. Por ejemplo un usuario cuyos atributos nos digan que no tiene email o whatsapp pero si un numero de telefono, sera notificado de las novedades solo por mensajes de texto.
+8. Herencia: Es la capacidad de heredar metodos y atributos de otra clase, y usarlas en la nuestra.
+9. Abstraccion: Es una forma de programar clases en donde se busca definir un objeto con las mínimas lineas de codigo, métodos y atributos posibles.
+10. Encapsulamiento: Es declarar nuestras variables de maneras protegidas o privadas, para que los demás objetos o los usuarios inclusive, no puedan acceder a ellos. Esto es por seguridad y para evitar conflictos.
+11. Setter y getter: Los setters son métodos para modificar los atributos de un objeto, con la sentencia "set" definimos o modificamos un atributo, y con la sentencia "get" retornamos el valor de un atributo.
 
-    Constructor: Es una funcion especial y obligatoria que debe tener cualquier clase, aqui se inicializan las variables o atributos que tendrá nuestro objeto.
 
-    Polimorfismo: Es la capacidad de un objeto de comportarse de manera distinta dependiendo de los valores de las variables o atributos.
-    Por ejemplo podemos crear un método "notificar()"" en una clase "user()"", y este método enviara un mail, un whatsapp o un mensaje de texto dependiendo de los atributos que tenga el objeto que hayamos creado. Por ejemplo un usuario cuyos atributos nos digan que no tiene email o whatsapp pero si un numero de telefono, sera notificado de las novedades solo por mensajes de texto.
-
-    Herencia: Es la capacidad de heredar metodos y atributos de otra clase, y usarlas en nuestra clase.
-
-    Abstraccion: Es una forma de programar clases en donde se busca definir un objeto con las mínimas lineas de codigo, métodos y atributos posibles.
-
-    Encapsulamiento: Es declarar nuestras variables de maneras protegidas o privadas, para que los demás objetos o los usuarios inclusive, al comunicarse entre sí, no puedan acceder a todos los atributos de los demás. Esto es por seguridad y para evitar conflictos.
-
-    Métodos estaticos, son métodos que se pueden utilizar sin necesidad de definir ningún objeto. Se los puede llamar y usarlos sin antes crear al objeto.
-
-    La programacion orientada a objetos lo que hace es crear plantillas generales para crear elementos similares que sean muy versátiles. Su utilidad es que podemos resumir mucho código.
-*/
-
-//Ejemplo de clase genérica. Esta clase sera la plantilla para crear animales.
+Realizemos con lo anterior un ejemplo de clase genérica. Esta clase sera la "plantilla" para crear animales.
+```javascript
+//Declaramos una nueva clase de nombre "animal".
 class animal {
-    //Constructor, donde declaramos las variables.
-    constructor(especie, edad, color) {
-        //Es importante resaltar que los parámetros que le pasemos son distintos a las variables que se inicializan en el constructor, aunque los igualamos en las siguientes lineas de código.
 
-        //Inicializamos variables con this.nombreDeLaVariable = valor;
+    //Elemento constructor, donde declaramos las variables.
+    constructor(especie, edad, color) {
+
+        //Inicializamos variables a usar en la clase con this.nombreDeLaVariable = valor; esta sintaxis solo se usa dentro de las clases.
         this.especie = especie;
         this.edad = edad;
         this.color = color;
 
-        this.info = `Soy un ${this.especie}, tengo ${this.edad} años y soy de color ${this.color}.`;
+        this.info = null;
     }
-    //Método o función para saludar, el objeto nos va a decir sus características. Las "arrow-function" no funcionan dentro de las clases.
+
+    //Método o función para saludar, el objeto nos va a decir sus características.
     saludar() {
+        info = `Soy un ${this.especie}, tengo ${this.edad} años y soy de color ${this.color}.`;
         document.write(this.info + "<br>");
     }
 
@@ -252,10 +313,10 @@ class animal {
     }
     //Método estático de ejemplo.
     static buenosDias(){
-        alert("Hola, buenos Dias");
+        alert("Hola, buenos dias");
     }
 
-    //Setter y getter: Los setters son métodos para modificar los atributos de un objeto. Con set definimos o modificamos un atributo, y con get nos devuelve el valor de un atributo.
+    //Métodos setter y getter:
     set setModificarEspecie(newName){
         this.especie = newName;
     }
@@ -263,39 +324,33 @@ class animal {
         return this.especie;
     }
 }
+```
+Es importante resaltar que:
+1. Las variables declaradas dentro de los paréntesis y que utilizamos para recibir los parámetros, son distintas a las variables que se inicializan en el constructor. Por esto debemos igualarlas.
+2. Las "arrow-function" no funcionan dentro de las clases.
+3. No podemos nombrar a ningún objeto con el mismo nombre de la clase utilizada.
+
+Para utilizar la clase "animal" empleamos la siguiente sintaxis.
+```javascript
 //Instanciamos la clase animal y creamos tres objetos con sus atributos.
 const perro = new animal("perro", "5 años", "marrón");
 const gato = new animal("gato", "2 años", "negro");
 const perico = new animal("perico", "1 año", "verde");
 
-//Imprimimos el valor del atributo color del perro.
+//Imprimimos el valor del atributo color, del objeto "perro".
 document.write(perro.color);
-//Imprimimos la info de los atributos del perro.
+
+//Imprimimos la información de los atributos del  objeto "perro".
 document.write(perro.info + "<br>");
 
-
-//Hacemos el saludo a traves de un método.
+//Ejecutamos el método saludar para cada objeto animal.
 perro.saludar();
 gato.saludar();
 perico.saludar();
 
-//Llamar a un método con polimorfismo.
-perro.ladrar(); //Si el objeto tiene la especie perro se imprimira waw, caso contrario se dirá que no es posible ladrar.
-perico.ladrar(); //Se dirá que el perico no puede ladrar.
-
-//Ejemplo de clase con herencia: Clase perro que hereda de la clase animal. No se puede nombrar al objeto con el mismo nombre que la clase
-class dog extends animal {
-    constructor(especie,edad,color,raza) {
-        //decimos que los atributos especie, edad y color. Se heredan de la clase animal.
-        super(especie,edad,color);
-        //el nuevo atributo raza lo declaramos de la misma manera,
-        this.raza = raza;
-    }
-}
-//declaramos el perrito y vemos que podemos usar los métodos de la clase animal sin ningun problema.
-const perrito = new dog("perro","2 años","gris","doberman");
-perrito.saludar();
-perrito.ladrar();
+//Llamamos al método que posee polimorfismo.
+perro.ladrar();   //Si el objeto tiene la especie perro se imprimira ¡WaW!, caso contrario se dirá que el objeto no puede ladrar.
+perico.ladrar();  //En el caso del perico, se dirá que este animal no puede ladrar.
 
 //Uso de un método estatico, no hace falta llamar a ningún objeto, la funcion simplemente se ejecuta llamando al método e indicandole la clase que lo contiene.
 animal.buenosDias();
@@ -304,8 +359,32 @@ animal.buenosDias();
 perico.setModificarEspecie = "canario";
 //uso del getter.
 document.write(perico.getEspecie);
+```
+Utilizemos ahora conceptos de Herencia en nuestras clases, para ello utilizamos la palabra reservada extends.
+```javascript
+//Creamos una clase "dog" que extienda a la clase "animal".
+class dog extends animal {
+    constructor(especie,edad,color,raza) {
+        //Con la siguiente sentencia indicamos que los atributos especie, edad y color. Se heredan de la clase animal.
+        super(especie,edad,color);
 
-//METODOS DE CADENAS: Son métodos para modificar los Strings.
+        //El nuevo atributo raza lo declaramos de la manera tradicional.
+        this.raza = raza;
+    }
+}
+```
+Utilicemos nuestra clase "dog", recien creada:
+```javascript
+
+//Creamos un objeto perrito de la clase dog, vemos que podemos usar los métodos de la clase animal sin ningun problema.
+const perrito = new dog("perro","2 años","gris","doberman");
+perrito.saludar();
+perrito.ladrar();
+```
+
+
+## Métodos de Cadenas.
+Son métodos para modificar las cadenas de texto o "string".
 /*  .concat() - junta dos o más cadenas y retorna una nueva.
     .startWidth() - si una cadena termina con los caracteres de otra cadena, devuelve true, sino devuelve false.
     .includes() - si una cadena puede encontrarse dentro de otra cadena, devuelve true, sino devuelve false.
@@ -489,6 +568,3 @@ console.log(h2_antiguo.previousElementSibling()); //muestra el anterior nodo her
 //CLOSEST. Selecciona el elemento ascendente mas cercano con la clase que coincida con nuestro selector.
 const div = document.querySelector(".div__3");
 console.log(div.closest(".div__3")); //en este caso guardamos en la variable "div" un div__3 que esta encerrado dentro de un div__2. Usando la propiedad closest se imprimiría en pantalla "div__2".
-
-
-//CURSO DE JAVASCRIPT NIVEL INTERMEDIO--------------------
