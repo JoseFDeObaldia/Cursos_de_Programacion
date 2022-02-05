@@ -1,9 +1,7 @@
-#Curso de Javascript - Nivel Basico
-
+# Curso de Javascript - Nivel Basico
 Este es un curso de Javascript completo, siguiendo los contenidos del edutuber "Lucas Dalto".
 
-##Variables:
-
+## Variables:
 Las varables son espacios que los programadores reservamos en la memoria RAM de  nuestro ordenador para poder guardar datos de manera temporal y usarlos en el programa.
 Existen dos tipos de variables, las globales, que se declaran con "var" y las locales, restringidas al bloque de codigo en donde se definen, que se declaran con "let". 
 En Javascript el tipo de dato no se escribe, pero este se inicializa al declarar la variable, es decir no tenemos que decirle que la variable sera un "string", pero una vez que la inicializamos dandole un string, no podemos almacenar en ella un "int" o un "boolean".
@@ -16,40 +14,34 @@ let numero = null;
 ```
 Dandole el valor de inicio "null", inicializamos la variable sin forzar un valor por defecto.
 
-##Constantes:
-
+## Constantes:
 Se declaran con const y deben inicializarse obligatoriamente.
 ```javascript
 const numero = 2;
 ```
 
-##alert() y prompt()
-
-Sos funciones para mostrar alertas. Con alert generamos alertas emergentes en la pagina web y con prompt mostramos el alert con una casilla de texto dentro. Esto nos permite obtener datos.
+## alert() y prompt()
+Son funciones para mostrar alertas. Con alert generamos alertas emergentes en la pagina web y con prompt mostramos el alert con una casilla de texto dentro. Esto nos permite obtener datos.
 ```javascript
 var nombre = prompt("Hola, ¿como te llamas?");
 alert("Hola" + nombre) + "¿Que tal tu dia?";
 ```
 
-##Operadores de Asignacion: 
+## Operadores de Asignacion: 
 Un operador de asignacion asigna un valor al operando de la izquierda basado en el valor del operando de la derecha.
-
 ```javascript
 let numero = 10;
-numero = 5; //Asignacion
-numero += 5; //Asignacion de Adicion
-numero -= 5;//Asignacion de Sustraccion
-numero *= 5;//Asignacion de multiplicacion
-numero /= 5;//Asignacion de division
-numero %= 5;//Asignacion de resto
-numero **= 5;//Asignacion de exponenciacion
-
+numero = 5;     //Asignacion
+numero += 5;    //Asignacion de Adicion
+numero -= 5;    //Asignacion de Sustraccion
+numero *= 5;    //Asignacion de multiplicacion
+numero /= 5;    //Asignacion de division
+numero %= 5;    //Asignacion de resto
+numero **= 5;   //Asignacion de exponenciacion
 ```
 
-
-##Operadores Aritmeticos.
+## Operadores Aritmeticos.
 Son operadores que toman valores numericos (ya sean literales o variables) como sus operandos y retornan un valor numerico unico.
-
 ```javascript
 let num1 = 10, num2 = 5;
 num1 + num2; //adicion
@@ -62,18 +54,26 @@ num1 * num2; //producto
 num1 - num2; //resta
 ```
 
-//DOCUMENT.WRITE: document.write es una funcion simple para imprimir texto en la pantalla sin inyectar html. El texto aparece sin formato.
+## document.write()
+document.write(); Es una funcion simple para imprimir texto con o sin codigo HTML en la pantalla.
 
-//FORZAR UN STRING:.
+## Forzar un String:
+Supongamos que tenemos las siguentes dos variables de tipo entero "int".
+```javascript
 let num1 = 53, num2 = 8;
-frase= "" + num1 + num2; //con las comillas vacias forzamos a que las variables numericas se traten como string, es decir forzamos el string.
+frase= "" + num1 + num2;
 document.write(frase);
+```
+Si deseamos imprimirlas en pantalla, una al lado de la otra, es decir como si de una cadena de texto se tratara, podemos hacerlo colocando unas comillas vacias al inicio.
 
-//CONCATENACION, se puede usar el signo + como se hizo desde siempre, o hacerlo con el signo ${} y los backticks ``
+## Concatenacion.
+En javascript existen dos formas de concatenar. La primera consiste en utilizar el operador de adicion "+" como se hace comunmente. O hacerlo encerrando todo entre backticks simples y colocando a las variables dentro de estructuras como la siguiente: ${}
+```javascript
 let nombre = "Juancito";
 frase = "Soy" + nombre + ", y estoy caminando";
 frase = `Soy ${nombre} y estoy caminando`;
 document.write(frase);
+```
 
 //ESCAPE DE COMILLAS. Si queremos poner comillas dobles en nuestra oracion o si queremos poner comillas simples en nuestra oracion, debemos encerrar todo el string con el tipo de comiila opuesto. Esto se llama escape de comillas.
 frase = "mi nombre es 'lucas', como te va?"
