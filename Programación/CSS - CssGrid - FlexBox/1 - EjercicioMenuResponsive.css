@@ -1,0 +1,85 @@
+/*Responsive design es construir una página web la cual pueda ser adaptada a distintas resoluciones y que se sigan viendo bien. Hoy en dia 
+es importante diseñar las páginas web con mobile first por el posicionamiento en buscadores, de este modo se diseña primero para 
+resoluciones de telefono movil y luego se adapta a tablets y escritorio.*/
+
+/*En este ejercicio buscaremos crear un menú responsive*/
+
+* {
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/*Realizamos una barra de navegación para la resolucion de pantalla de una PC*/
+.nav {
+	display: block;
+	background: #AED6F1;
+}
+/*Diseño de los elementos del menu*/
+.navLi {
+	display: inline-block;
+	padding: 10px;
+}
+.navLi a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.navLi i {
+	color: #FFFFFF;
+	padding: 10px;
+}
+.navLi:hover > a, .navLi:hover > i {
+	color: #555555;
+}
+
+/*Realizamos un menu para la resolucion de smartphones, este menu es más complejo y lleva dos contenedores, uno para las barras y el botón, 
+y el otro para los iconos que aparecen al presionar el botón*/
+.navResponsive {
+	display: none;
+	width: 100%;
+}
+.navResponsiveButton {
+	background: #AED6F1;
+	text-align: right;
+	color:  #FFFFFF;
+	padding: 10px;
+	font-size: 25px;
+	height: 40px;
+}
+.navResponsiveOpen {
+	background: #D6EAF8;
+	position: absolute;
+	width: 100%;
+	top: -100%;
+	transition-duration: 1s;
+	z-index: -1;
+}
+/*Diseño de los elementos del menu responsive*/
+.navResponsiveOpenLi {
+	display: block;
+	padding: 10px;
+}
+.navResponsiveOpenLi a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.navResponsiveOpenLi i {
+	color: #FFFFFF;
+	padding: 10px;
+}
+.navResponsiveOpenLi:hover > a, .navResponsiveOpenLi:hover > i {
+	color: #555555;
+}
+
+/*Accion de desplegar menu cuando el  raton esta sobre el boton de barras*/
+.navResponsiveButton:hover + .navResponsiveOpen, .navResponsiveOpen:hover {
+	position: absolute;
+	width: 100%;
+	top: 60px;
+}
+
+/*Accion de cambiar de tipos de menus cuando la resolucion de la pantalla baje a menos de 750px*/
+@media only screen and (max-width: 750px) {
+	.nav { display: none; }
+	.navResponsive { display: block; }
+}

@@ -1,0 +1,187 @@
+/*----Preliminares y Asignacion de Variables----*/
+:root {
+    --azul1: #EAF2F8;
+    --azul2: #D4E6F1;
+    --azul3: #A9CCE3;
+    --azul4: #7FB3D5;
+    --azul5: #5499C7;
+    --azul6: #2980B9;
+    --azul7: #2471A3;
+    --azul8: #0b2f47;
+    --azul9: #1A5276;
+    --azul10: #154360;
+}
+body {
+    background-color: var(--azul3);
+}
+
+/*----HEADER----*/
+/*Configurando el CSS-Grid*/
+header {
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100px;
+    background-color: var(--azul8);
+
+    z-index: 10;
+}
+.headerSeparador{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr 150px;
+    grid-template-rows: 50px 50px;
+    grid-template-areas:
+    "headerLogo headerSearch headerControls"
+    "headerLogo headerCategories headerCategories";
+}
+/*Posicionando los divs en el header con CSS GRID, headerLogo*/
+.headerLogo {
+    grid-area: headerLogo;
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+}
+.headerLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    border-radius: 4px;
+}
+/*headerSearch*/
+.headerSearch {
+    grid-area: headerSearch;
+    width: 100%;
+    height: 100%;
+}
+.headerSearchInput {
+    position: relative;
+    display: inline-block;
+    top: 20%;
+    left: 0px;
+    width: calc(100% - 100px);
+    height: 60%;
+}
+.headerSearchInput input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 2px;
+}
+.headerSearchButton {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 60%;
+    top: 7%;
+    background-color: var(--azul5);
+    border-radius: 2px;
+}
+.headerSearchButton i {
+    color: #fff;
+    position: relative;
+    top: 20%;
+    left: 38%;
+    height: 33%;
+    width: 60%;
+}
+/*headerControls*/
+.headerControls {
+    grid-area: headerControls;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerControls li {
+    display: inline-block;
+    height: 60%;
+    font-size: 18px;
+    padding: 2px;
+    color: #ffffff;
+}
+/*headerCategories*/
+.headerCategories {
+    grid-area: headerCategories;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerCategories li {
+    display: inline-block;
+    height: 60%;
+    padding: 4px;
+}
+.headerCategories a {
+    font-size: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #ffffff;
+}
+/*colocando los hovers*/
+.headerCategories a:hover {
+    color: var(--azul4);
+}
+.headerControls i:hover {
+    color: var(--azul4);
+    cursor: pointer;
+}
+.headerSearchButton:hover {
+    background-color: var(--azul3);
+    cursor: pointer;
+}
+
+/*Trabajando con los elementos del Section*/
+.container {
+    position: relative;
+    width: 96%;
+    height: 96%;
+    margin: 2%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    grid-template-rows: repeat(auto-fill, minmax(200px ,1fr));
+    grid-gap: 10px 10px;
+
+    grid-auto-rows: minmax(200px, 1fr);
+}
+.gridItem {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    justify-self: center;
+    align-self: center;
+    border-radius: 5px;
+    transition: width 0.5s, height 0.5s;
+}
+.gridItem:hover {
+    width: 95%;
+    height: 95%;
+    cursor: pointer;
+}
+
+/*Arreglando el Footer*/
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: var(--azul8);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px;
+}
+.footerSocial, .footerContact, .footerCopyright {
+    padding: 0px;
+    color: #fff;
+    padding: 10px;
+    align-self: center;
+    justify-self: center;
+}
+
+.footerContact a, .footerSocial a, .footerCopyright p {
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+}

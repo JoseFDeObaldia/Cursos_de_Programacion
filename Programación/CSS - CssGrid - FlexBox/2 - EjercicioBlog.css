@@ -1,0 +1,103 @@
+/*Configuraciones preliminares*/
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #d6d6d6;
+}
+
+/*Construyendo el Header y el Nav*/
+header {
+    background: #364552;
+    color: #ffffff;
+    text-align: center;
+}
+.title {
+    font-size: 2rem;
+    margin-top: 0px;
+    padding-top: .2rem;
+}
+.navUl, .navBusqueda, .navButtom{
+    display: inline-block;
+    margin: 0rem 0.75rem 0.75rem 0rem;
+}
+.navUlLi {
+    display: inline-block;
+    padding: 0rem 0.75rem;
+    margin: 0rem 0.50rem;
+}
+.navUlLi a, .navUlLi i{
+    padding: 2px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.navBusqueda{
+    width: 30%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.22rem;
+}
+.navButtom:hover, .navUlLi:hover > a, .navUlLi:hover > i {
+    color: #7d92a5;
+}
+
+/*Modificando el Section de la página web*/
+.sectionContainer {
+    width: 700px;
+    margin: 0 auto;
+}
+.entrada {
+    background-color: #ffffff;
+    margin-top: 0.25rem;
+    border-radius: 1rem;
+
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+.entrada p, .entrada h2 {
+    text-align: center;
+    padding: 0.25rem;
+}
+
+/*Ajustando las imagenes a una resolucion de 700*400*/
+.entrada img{
+    width: 700px;
+    height: 400px;
+    overflow: hidden;
+}
+
+/*Aplicamos una sombra a las tarjetas y cambiamos el cursor cuando se pase encima*/
+.entrada:hover {
+    box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.3);
+}
+
+/*Arreglamos el footer*/
+footer {
+    background-color: #364552;
+}
+.footerSocial p, .footerContact p{
+    display: inline-block;
+} 
+.footerSocial a, .footerSocial i {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0rem 0.4rem;
+}
+.footerSocial p:hover > a, .footerSocial p:hover > i {
+    color: #7d92a5;
+}
+.footerContact a, .footerContact p {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0rem 0.4rem;
+}
+.footerContact a:hover {
+    color: #7d92a5;
+}
+.footerCopyright {
+    float: right;
+    margin-right: 0.6rem;
+}
+/*Listooo*/

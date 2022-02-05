@@ -1,0 +1,5 @@
+CSS:
+1) Para buscar tipografias externas ingresamos a Google Fonts:   https://fonts.google.com/
+2) Para buscar colores y sacar su código ingresamos en:          https://htmlcolorcodes.com/es/
+3) Para buscar iconos en las páginas web ingresamos en:          https://fontawesome.com/
+4) Para generar clip-path vamos al siguiente generador:          https://bennettfeely.com/clippy/

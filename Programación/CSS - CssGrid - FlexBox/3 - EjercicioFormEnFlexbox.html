@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+
+    <title>Formulario Con Flexbox</title>
+
+    <link rel="stylesheet" type="text/css" href="3 - EjercicioFormEnFlexbox.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/194a4f1fec.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="form">
+        <form class="formContainer">
+            <div class="formContainerImput">
+                <input class="formContainerItem" id="idForNombre" type="text" placeholder="Escriba su nombre">
+                <input class="formContainerItem" id="idFormEmail" type="email" placeholder="Correo del destinatario">
+                <input class="formContainerItem" id="idFormAsunto" type="text" placeholder="Asunto del Email">
+
+                <textarea placeholder="Escriba su mensaje..." id="idFormTextarea"></textarea>
+            </div>
+
+            <div class="formContainerLink">
+                <input type="file" name="Adjuntar Archivos">
+                <input type="submit" name="Enviar">
+            </div>
+        </form>
+
+        <div class="formImage">
+            <i class="fas fa-envelope-open-text"></i>
+            <a href="mailto:">Enviar desde su Casilla de Correo</a>
+        </div>
+    </div>
+</body>
+</html>

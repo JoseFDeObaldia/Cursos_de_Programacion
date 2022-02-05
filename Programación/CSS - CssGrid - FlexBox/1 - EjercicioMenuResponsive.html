@@ -1,0 +1,46 @@
+<!--Responsive design es construir una página web la cual pueda ser adaptada a distintas resoluciones y que se sigan viendo bien. Hoy en dia es importante diseñar las páginas web con mobile first por el posicionamiento en buscadores, de este modo se diseña primero para resoluciones de telefono movil y luego se adapta a tablets y escritorio.-->
+
+<!--En este ejercicio buscaremos crear un menú responsive-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="1 - EjercicioMenuResponsive.css">
+
+	<script src="https://kit.fontawesome.com/194a4f1fec.js" crossorigin="anonymous"></script>
+
+	<title>Menu Responsive en CSS</title>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul class="nav">
+				<li class="navLi"><i class="fas fa-house-user"></i><a href="">Inicio</a></li>
+				<li class="navLi"><i class="fas fa-user-friends"></i><a href="">Sobre Nosotros</a></li>
+				<li class="navLi"><i class="fas fa-shopping-cart"></i><a href="">Nuestros Productos</a></li>
+				<li class="navLi"><i class="fas fa-question-circle"></i><a href="">Ayuda</a></li>
+				<li class="navLi"><i class="fas fa-phone"></i><a href="">Contáctanos</a></li>
+			</ul>
+
+			<ul class="navResponsive">
+				<div class="navResponsiveButton">
+					<i class="fas fa-bars"></i>
+				</div>
+
+				<div class="navResponsiveOpen">
+					<li class="navResponsiveOpenLi"><i class="fas fa-house-user"></i><a href="">Inicio</a></li>
+					<li class="navResponsiveOpenLi"><i class="fas fa-user-friends"></i><a href="">Sobre Nosotros</a></li>
+					<li class="navResponsiveOpenLi"><i class="fas fa-shopping-cart"></i><a href="">Nuestros Productos</a></li>
+					<li class="navResponsiveOpenLi"><i class="fas fa-question-circle"></i><a href="">Ayuda</a></li>
+					<li class="navResponsiveOpenLi"><i class="fas fa-phone"></i><a href="">Contáctanos</a></li>	
+				</div>
+			</ul>
+		</nav>
+	</header>
+	
+</body>
+</html>

@@ -1,0 +1,47 @@
+✔HTML
+✔CSS - CSSGrid - FlexBox
+Java Script
+Principios de SEO
+Preprocesadores SAAS
+Bootstrap (conj de herramientas para maquetar más rápido)
+React
+JQuery
+
+GitHub
+
+Ux/Ui
+
+Photoshop
+Lightroom
+
+
+MySQL
+PHP
+Node.js
+Laravel (framework para PHP)
+
+Assembler
+Java
+C++
+Python
+Django (Python)
+Tensorflow (Python)
+Java para Android
+Swift (para apps en ios y mac)
+
+Wordpress
+Macros JS (vue y next)
+Ecmascript
+Tipescript
+Api Rest
+Lazy Loading
+Javascript Ecosystem (node, npm, webpack, rollup, babel)
+JSON
+Metodologias Agiles
+
+BigData con Python
+
+
+✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔✔
+
+Para el José del Futuro, todo va a salir bien, solo no te rindas!

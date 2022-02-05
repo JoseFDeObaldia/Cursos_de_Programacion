@@ -1,0 +1,32 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+.container {
+    text-align: center;
+    filter: contrast(30);
+    background-color: #fff;
+}
+
+.caja {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    margin: 40px;
+    border-radius: 50%;
+    filter: blur(20px);
+}
+
+.caja:first-child {
+    animation: trasladar 1.6s alternate infinite;
+}
+
+@keyframes trasladar {
+    0% {
+        transform: translate(0px);
+    } 100% {
+        transform: translate(160px);
+    }
+    
+}

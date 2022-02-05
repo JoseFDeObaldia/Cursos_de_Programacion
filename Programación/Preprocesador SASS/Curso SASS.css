@@ -1,0 +1,361 @@
+@charset "UTF-8";
+/*Sass es un lenguaje de hojas de estilo que simplemente mejora el lenguaje CSS, agregandole caracteristicas de lenguaje de programación. Cabe aclarar que se necesita de un compilador que transpile de SASS a CSS ya que el navegador solo lee CSS. Veamos las funcionalidades o características que se agregan.*/
+/*Variables: sirven para guardar datos que vayan a ser recurrentes, no se debe declarar el tipo de variable, solo su nombre y valor. Cuando se trabaja SASS o CSS con frameworks como bootstrap, es usual que haya conflictos con las clases, por ello se puede utilizar la variable brand y darle el valor de la marca o el nombre de la empresa. De este modo al declarar clases podemos agregarle el nombre de la variable al nombre de la clase.*/
+/*Llamamos a la variable brand para darle a la clase un nombre mas personalizado, el resultado en CSS será: ".udemy__p". Luego llamamos a la variable $primary-color y le asignamos su valor al atributo color.*/
+.udemy__p {
+  color: #0511ac;
+}
+
+/*Nesting: sirve para anidar selectores. Muy util para que el código sea legible y ahorrar lineas de código. No se deben anidar más de 3 selectores, esto ya sería mala práctica.*/
+/*Codigo con CSS*/
+.card {
+  background-color: lightgrey;
+  width: 300px;
+  height: 250px;
+  border-radius: 5px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.card__title, .card__paragraph, .card__paragraph2 {
+  text-align: justify;
+  margin: 10px;
+}
+
+.card__title {
+  color: black;
+  font-size: 18px;
+  text-align: center;
+}
+
+.card__paragraph {
+  color: black;
+  font-size: 12px;
+}
+
+.card__paragraph2 {
+  color: grey;
+  font-size: 10px;
+}
+
+/*Codigo con Nesting de SASS:*/
+.card {
+  background-color: lightgrey;
+  width: 300px;
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  /*Tambien se pueden anidar propiedades con prefijos iguales. Otra forma de hacer esto es con shorthands*/
+  border-radius: 5px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.card .card__title, .card .card__paragraph, .card .card__paragraph2 {
+  text-align: justify;
+  margin: 10px;
+}
+
+.card .card__title {
+  color: black;
+  font-size: 18px;
+  text-align: center;
+}
+
+.card .card__paragraph {
+  color: black;
+  font-size: 12px;
+}
+
+.card .card__paragraph2 {
+  color: grey;
+  font-size: 10px;
+}
+
+/*Placeholder: Otra utilidad importante es el uso del selector placeholder, el cual nos evita sobreescribir propiedades para muchos elementos parecidos. Por ejemplo supongamos que tenemos 4 botones que solo cambian su color.*/
+.btn-primary, .btn-home, .btn-login {
+  height: 40px;
+  min-width: 100px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  margin: 5px 0px;
+  /*el & nos ayuda a seleccionar clases internas, sin tener que escribir de nuevo el selector*/
+  -webkit-box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover, .btn-home:hover, .btn-login:hover {
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: green;
+}
+
+.btn-home {
+  background-color: red;
+}
+
+.btn-login {
+  background-color: blue;
+}
+
+/*Import: Podemos añadir estilos de otras hojas de estilo ya sean CSS o SASS, esto lo hacemos con. @import*/
+/*Mixin: Los mixins son un preámbulo a las funciones y nos ayudan a reducir nuestro código. Escribimos el @mixin, luego colocaremos el nombre del mixin, en este caso el nombre será "boton" y luego colocaremos entre paréntesis los parámetros que vamos a utilizar.*/
+.btn-turquesa, .btn-gris, .boton {
+  padding: 8px 15px;
+  height: 30px;
+  margin: 25px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 800;
+  border-radius: 10px;
+}
+
+/*Con esto configuramos un botón genérico al que invocaremos cada vez que queramos construir un botón con estas caracteristicas. Notese que se utiliza @include cuando se hereda especificamente de un mixin, y se utiliza extend cuando se hereda de otro selector*/
+.btn-turquesa {
+  background: turquoise;
+  color: black;
+}
+
+.btn-gris {
+  background: grey;
+  color: black;
+}
+
+/*Listas: Son arrays que se utilizan para agrupar muchos valores de variables. Es util para cuando se deben agrupar muchas variables. Luego se acccede a estas variables a traves de mixins, funciones o con nth(). Veamos un ejemplo.*/
+.boton {
+  background: #000;
+  color: #b6b9e9;
+}
+
+/*Una forma más avanzada de guardar las variables es usando maps. Su sintaxis es la siguiente*/
+.card {
+  background-color: #b6b9e9;
+}
+
+/*Se pueden escrbir los mapas sin comillas y con varias propiedades. Esto se utiliza con sentencias each generalmente.*/
+/*Algunas funciones para maps:
+map-get(map, key): Devuelve el valor de una clave dada.
+map-has-key(map, key): Comprueba si existe un clave determinada dentro del map.
+map-keys(map): Devuelve una lista con las claves del map.
+map-values(map): Devuelve una lista con los valores del map.
+map-merge(map1, map2): Permite fusionar maps.
+map-remove(map, keys...): Elimina elementos dentro del map..
+*/
+/*Con maps podemos hacer muchas cosas, por ejemplo un trozo de código que nos ayude con las interrupciones de tamaño*/
+@media (min-width: 1200px) {
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+/*Las funciones son otra de las utilidades que nos incluye sass. Cuando estas se compilan nos dan solo selectores CSS. Estas se diferencian de los mixins porque nos permiten retornar valores y se utilizan para manipular los datos dinamicamente, en cambio los mixins se utilizan para importar bloques de código que sean importantes.*/
+/*Llamamos a la función.*/
+.btn {
+  width: 375px;
+}
+
+/*Sentencia de control if-else, se pueden agregar a los mixins y las funciones*/
+.banner {
+  background-color: #f2ece4;
+  color: #036;
+}
+
+body.dark .banner {
+  background-color: #6b717f;
+  color: #d2e1dd;
+}
+
+/*@each: nos sirve para iterar estilos de una lista, la sentencia @each "var" in "list", significaria cada valor en la lista. en este caso nuestro each recibe dos valores, el "nombre" que se utilizara para generar un name personalizado de nuestra clase y el "size" que nos dara el tamaño de la letra. Luego la sentencia each generara tantos selectores como elementos haya en la lista*/
+.title-16 {
+  font-size: 16px;
+}
+
+.title-20 {
+  font-size: 20px;
+}
+
+.title-24 {
+  font-size: 24px;
+}
+
+.title-32 {
+  font-size: 32px;
+}
+
+/*Tambien se pueden iterar mapas. Por ejemplo veamos el código siguiente que nos permite lograr 4 selectores segun el nombre del título y con la propiedad de font-size con su valor correspondiente*/
+.title-xs {
+  font-size: 16px;
+}
+
+.title-md {
+  font-size: 20px;
+}
+
+.title-lg {
+  font-size: 24px;
+}
+
+.title-xl {
+  font-size: 32px;
+}
+
+/*Por último podemos realizar each más complejos donde se modifican varias propiedades leyendo un mapa.*/
+.title-small {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.title-medium {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.title-large {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.title-extra-large {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+/*El bucle for nos permite iterar elementos, esto es util para casos especificos como degradados en una lista de botones, labels, etc.*/
+ul:nth-child(3n + 1) {
+  background-color: #004080;
+}
+
+ul:nth-child(3n + 2) {
+  background-color: #004d99;
+}
+
+ul:nth-child(3n + 3) {
+  background-color: #0059b3;
+}
+
+/*Otro ejemplo*/
+.spacer-10 {
+  height: 10px;
+}
+
+.spacer-20 {
+  height: 20px;
+}
+
+.spacer-30 {
+  height: 30px;
+}
+
+.spacer-40 {
+  height: 40px;
+}
+
+.spacer-50 {
+  height: 50px;
+}
+
+.spacer-60 {
+  height: 60px;
+}
+
+.spacer-70 {
+  height: 70px;
+}
+
+.spacer-80 {
+  height: 80px;
+}
+
+.spacer-90 {
+  height: 90px;
+}
+
+.spacer-100 {
+  height: 100px;
+}
+
+.spacer-10 {
+  height: 10px;
+}
+
+.spacer-20 {
+  height: 20px;
+}
+
+.spacer-30 {
+  height: 30px;
+}
+
+.spacer-40 {
+  height: 40px;
+}
+
+.spacer-50 {
+  height: 50px;
+}
+
+.spacer-60 {
+  height: 60px;
+}
+
+.spacer-70 {
+  height: 70px;
+}
+
+.spacer-80 {
+  height: 80px;
+}
+
+.spacer-90 {
+  height: 90px;
+}
+
+.spacer-100 {
+  height: 100px;
+}
+
+/*Y el uso que se le puede dar es… cualquiera. Desde objetivos sencillos como este a cosas más elaboradas, usando escalas de colores por ejemplo. Lo que sea que necesite una iteración.*/
+/*# sourceMappingURL=Curso SASS.css.map */
