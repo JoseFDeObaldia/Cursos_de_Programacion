@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Página web con Bootstrap personalizado</title>
+</head>
+<body>
+  <header>
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+
+        <a class="navbar-brand" href="/index.html">PáginaWeb</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto ms-3 mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="/index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/servicios.html">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="/contacto.html">Contacto</a></li>
+          </ul>
+
+          <form class="d-flex me-3">
+            <input class="form-control me-2 nav__input" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <main class="bg-light container">
+    <h1 class="text-center py-5 display-6">Servicios</h1>
+    <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis architecto dolorum deserunt, illum mollitia id nihil, nisi maiores rerum amet soluta aspernatur cumque laborum veniam non fugit ullam totam voluptate.</p>
+
+    <div class="row py-5">
+        <div class="col-12 col-md-4 mb-3">
+            <div class="card text-center">
+                <img src="/img/servicios__card1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-3">
+            <div class="card text-center">
+                <img src="/img/servicios__card2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-3">
+            <div class="card text-center">
+                <img src="/img/servicios__card3.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark container-fluid">
+    <p class="fs-4 text-light text-center">Lorem, ipsum dolor.</p>
+    <p class="text-center text-light h6 fw-lighter">©Todos los derechos reservados | Propiedad de PáginaWEB.inc</p>
+  </footer>
+  
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

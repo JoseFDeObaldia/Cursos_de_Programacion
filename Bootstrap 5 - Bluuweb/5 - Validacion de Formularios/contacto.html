@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Página web con Bootstrap personalizado</title>
+</head>
+
+<body>
+    <header>
+        <!-- Barra de Navegación -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="/index.html">PáginaWeb</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto ms-3 mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="/index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/servicios.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/contacto.html">Contacto</a></li>
+                    </ul>
+
+                    <form class="d-flex me-3">
+                        <input class="form-control me-2 nav__input" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="bg-light container mb-5">
+        <h1 class="text-center py-5 display-6">Contáctanos</h1>
+        <p class="lead text-center mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis architecto dolorum deserunt, illum mollitia id nihil, nisi maiores rerum amet soluta aspernatur cumque laborum veniam non fugit ullam totam voluptate.</p>
+
+        <form action="" class="needs-validation px-3 py-4" novalidate>
+            <div class="row py-3">
+                <div class="mb-3 col-6">
+                    <label for="inputFirstName" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="inputFirstName" required>
+                </div>
+
+                <div class="mb-3 col-6">
+                    <label for="inputLastName" class="form-label">Apellido:</label>
+                    <input type="text" class="form-control" id="inputLastName" required>
+                </div>
+
+                <div class="mb-3 col-12">
+                    <label for="inputEmail" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="inputEmail"
+                        placeholder="name@example.com" required>
+                    <div id="inputEmailHelp" class="form-text">Asegurate de escribir correctamente tu correo.</div>
+                    <div class="valid-feedback">¡Se ve bien!</div>
+                    <div class="invalid-feedback">Revisa tu email</div>
+                </div>
+
+                <div class="mb-3 col-4">
+                    <label for="inputCountry" class="form-label my-0">Pais:</label>
+                    <input type="text" class="form-control" id="inputCountry" required>
+                    <div class="valid-feedback">¡Perfecto!</div>
+                </div>
+
+                <div class="mb-3 col-4">
+                    <label for="inputState">Estado:</label>
+                    <select class="form-select form-select mb-3" aria-label=".form-select-lg example" required>
+                        <option selected disabled>Selecciona una opción...</option>
+                        <option value="1">Chaco</option>
+                        <option value="2">Bs. As.</option>
+                        <option value="3">CABA</option>
+                        <option value="4">Rosario</option>
+                        <option value="5">Córdoba</option>
+                        <option value="6">Tucumán</option>
+                        <option value="7">Salta</option>
+                    </select>
+                </div>
+
+                <div class="mb-3 col-4">
+                    <label for="inputPhoneNumber">Número de Telefono:</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text">#</span>
+                        <input type="text" class="form-control" placeholder="000 000-0000" id="inputPhoneNumber" required>
+                    </div>
+                    <div id="inputNumberlHelp" class="form-text">Asegurate de escribir el código de area.</div>
+                    <div class="valid-feedback">¡Excelente!</div>
+                    <div class="invalid-feedback">EL campo debe tener 10 dígitos</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="inputTextarea" class="form-label">Comentario: </label>
+                    <textarea class="form-control" id="inputTextarea" rows="3"></textarea>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-inputs" type="check-box" id="inputCheckbox" required>
+                        <label for="inputCheckbox">Acepto los términos y condiciones.</label>
+                        <div class="invalid-feedback">Por favor acepta los términos y condiciones.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="bg-dark container-fluid">
+        <p class="fs-4 text-light text-center">Lorem, ipsum dolor.</p>
+        <p class="text-center text-light h6 fw-lighter">©Todos los derechos reservados | Propiedad de PáginaWEB.inc</p>
+    </footer>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/formulario.js"></script>
+</body>
+
+</html>

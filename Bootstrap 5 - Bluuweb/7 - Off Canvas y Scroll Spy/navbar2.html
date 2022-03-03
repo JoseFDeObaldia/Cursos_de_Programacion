@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Off canvas 2</title>
+
+    <link rel="stylesheet" href="css/navbarStyles.css">
+</head>
+<body>
+
+
+    <!-- navbar -->
+    <nav class="navbar navbar-dark bg-primary fixed-top" id="navbarCanvas">
+        <div class="container text-white">
+            <i class="bi bi-list h3" type="button" aria-controls="offcanvasDemo1"data-bs-toggle="offcanvas" data-bs-target="#offcanvasDemo1"></i>
+        </div>
+
+        <div class="navbar-brand text-white">
+            Navbar
+        </div>
+    </nav>
+
+    <!-- Off Canvas -->
+    <div class="offcanvas offcanvas-start bg-primary text-white" id="offcanvasDemo1" aria-labelledby="offcanvasDemo1Label">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Titulo</h5>
+    
+            <h2 type="button" data-bs-dismiss="offcanvas" aria-label="close"><i class="bi bi-x-square"></i></h2>
+        </div>
+
+        <div class="offcanvas-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque nemo itaque porro dicta, voluptas ullam velit, dolores illo quod ratione corporis repudiandae modi atque quis inventore magni unde, tempora molestiae.</p>
+
+            <div class="d-grid gap-2">
+                <a href="#uno" class="btn btn-info text-white">
+                    <i class="bi bi-google"></i>
+                    Acceder
+                </a>
+
+                <a href="#dos" class="btn btn-info text-white">
+                    <i class="bi bi-controller"></i>
+                    Juegos
+                </a>
+
+                <a href="#tres" class="btn btn-info text-white">
+                    <i class="bi bi-credit-card"></i>
+                    Planes
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Parte principal -->
+    <div class="container">
+        <section id="uno" class="wh-100 pt-5">
+            <h2 class="display-5 mt-5 text-primary">Uno</h2>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, repellendus suscipit vero ratione nesciunt maxime aliquid omnis aperiam natus sequi voluptatibus cum libero hic accusantium sed magni aut exercitationem alias.</p>
+        </section>
+
+        <section id="dos" class="wh-100 pt-5">
+            <h2 class="display-5 mt-5 text-primary">Dos</h2>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, repellendus suscipit vero ratione nesciunt maxime aliquid omnis aperiam natus sequi voluptatibus cum libero hic accusantium sed magni aut exercitationem alias.</p>
+        </section>
+
+        <section id="tres" class="wh-100 pt-5">
+            <h2 class="display-5 mt-5 text-primary">Tres</h2>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, repellendus suscipit vero ratione nesciunt maxime aliquid omnis aperiam natus sequi voluptatibus cum libero hic accusantium sed magni aut exercitationem alias.</p>
+        </section>
+    </div>
+
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 Este es un curso de Javascript completo, siguiendo los contenidos del edutuber "Lucas Dalto".
 
 ## Variables:
-Las varables son espacios que los programadores reservamos en la memoria RAM de  nuestro ordenador para poder guardar datos de manera temporal y usarlos en el programa.
+Las varables son espacios que los programadores reservamos en la memoria RAM de  nuestro ordenador para poder guardar datos de manera temporal y usarlos en el programa. Los datos pueden ser numeros, cadenas de texto, o incluso objetos literales.
 Existen dos tipos de variables, las globales, que se declaran con "var" y las locales, restringidas al bloque de codigo en donde se definen, que se declaran con "let". 
 En Javascript el tipo de dato no se escribe, pero este se inicializa al declarar la variable, es decir no tenemos que decirle que la variable sera un "string", pero una vez que la inicializamos dandole un string, no podemos almacenar en ella un "int" o un "boolean".
 
@@ -240,6 +240,35 @@ for (animal of animales) {
 }
 ```
 
+## Switch:
+Los switch son sentencias de control en donde se ejecutara una accion de una lista de acciones dependiendo de un parámetro. Por ejemplo:
+```javascript
+let name = prompt("¿Cual es tu nombre?");
+let opcion = prompt(`¿Cual es tu país de origen?
+Elige una opción:
+1. Francia
+2. España
+3. Suiza
+4. Argentina
+`);
+
+switch(opcion) {
+    case `1`:  {
+        console.log("Hola " + name + ", ¿que tal todo por Francia?");
+    }
+    case `2`:  {
+        console.log("Hola " + name + ", ¿que tal todo por España?");
+    }
+    case `3`:  {
+        console.log("Hola " + name + ", ¿que tal todo por Suiza?");
+    }
+    case `4`:  {
+        console.log("Hola " + name + ", ¿que tal todo por Argentina?");
+    }
+}
+
+```
+
 ## Funciones:
 Son trozos de codigo que se pueden reutilizar al invocarlos. Su sintaxis es sencilla, se declaran con la palabra "function" y se les coloca un nombre, luego se le pasan parámetros a traves de un par de paréntesis y por último se escribe el código a reutilizar encerrado entre llaves. 
 Tambien es posible hacer que la funcion retorne un valor utilizando la sentenia "return();", cabe aclarar que esta sentencia además finaliza la ejecucion de la funcion.
@@ -266,7 +295,7 @@ La programación orientada a objetos es un paradigma de programacion en donde se
 Su utilidad es que podemos resumir mucho código de forma intuitiva.
 
 1. Clase: Es una porción de código que contendra todas las características o atributos de nuestro objeto (las variables), y todas las cosas que puede hacer nuestro objeto (los métodos). Se utiliza como una base para objetos genéricos. Por ejemplo podemos crear una clase "usuario();" la cual tendra los métodos "notificar();", "consultarSaldo();", "modificar¨Perfil();" y "verCompras();".
-2. Objeto: Es el resultado de instanciar nuestra clase, es decir el elemento que surge cuando llamamos a una clase y la usamos. Este elemento nuevo es un objeto propiamente dicho.
+2. Objeto: Es el resultado de instanciar nuestra clase, es decir el elemento que surge cuando llamamos a una clase y la usamos. Este elemento nuevo es un objeto propiamente dicho. Los objetos no dejan de ser colecciones de elementos.
 3. Atributos: Son todas las caracteristicas que tendra nuestro objeto, es decir las variables. Estas se declaran en la "plantilla" clase, dentro de una funcion especial llamada contructor.
 4. Metodos: Los métodos son simplemente funciones clásicas, solo que tienen una sintaxis especial que unicamente se puede usar dentro de la clase.
 5. Constructor: Es una funcion especial y obligatoria que debe tener cualquier clase, aqui se inicializan las variables o atributos que tendrá nuestro objeto.

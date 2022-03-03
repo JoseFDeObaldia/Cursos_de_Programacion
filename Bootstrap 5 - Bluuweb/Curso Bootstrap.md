@@ -158,7 +158,7 @@ Para el grosor de los bordes:
 ```
 
 Para quitar un borde utilizamos las siguientes clases. Notese que debemos colocar el borde para poder quitarlo, esta es la razon de agregar la clase `border` sola. Esto tambien esta presente en la lista anterior con el grosor de los bordes.
-````html
+```html
 <span class="border border-0"></span>
 <span class="border border-top-0"></span>
 <span class="border border-end-0"></span>
@@ -178,5 +178,146 @@ Redondear los bordes:
 ```
 La clase rounded-pill es de gran utilidad cuando se quiere redondear un elemento sin generar la elipse característica.
 
-## Hola
-lorem ipsum
+## Margin y padding (Spacing):
+Para agregar un margin debemos agregar la clase `m-#` y colocarle un valor de cero a cinco, este valor se traduce a rem a traves de una formula matemática, lo que nos dara los valores de esta fórmula, es el mapa de sass. 
+```scss
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+$negative-spacers: if($enable-negative-margins, negativify-map($spacers), null);
+```
+Por ejemplo si deseamos darle a un elemento, un padding a todos lados de 1.5rem. Escribiriamos: `p-4`.
+
+Clases para margin:
+1. Margin: `m-#` 
+2. Margin-top: `mt-#`
+3. Margin-bottom: `mb-#`
+4. Margin-start: `ms-#`
+5. Margin-end: `me-#`
+6. Margin-x: `mx-#`
+7. Margin-y: `my-#`
+
+Si queremos centrar un elemento, debemos darle display: block, un width definido y colocarle la clase `mx-auto`.
+
+Clases para padding:
+1. Padding: `p-#` 
+2. Padding-top: `pt-#`
+3. Padding-bottom: `pb-#`
+4. Padding-start: `ps-#`
+5. Padding-end: `pe-#`
+6. Padding-x: `px-#`
+7. Padding-y: `py-#`
+
+Si deseamos que por ejemplo, el margin-top de un elemento en pantallas pequeñas sea de 1.5rem, pero en pantallas medianas sea de cero. Hariamos lo siguiente:
+```html
+<p class="mt-4 mt-md-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati dolor neque blanditiis quibusdam sint necessitatibus non aliquid eos doloremque labore. Eligendi amet eius exercitationem nulla dicta. Architecto animi dolorem possimus.</p>
+```
+
+## Clases para Textos:
+La alineacion de textos en bootstrap es muy sencilla.
+
+```html
+<p class="text-start">Alineacion al inicio</p>
+<p class="text-center">Alineacion al centro</p>
+<p class="text-end">Alineacion al final</p>
+
+<p class="text-sm-start">Alineacion al inicio en pantallas iguales o mayores a small</p>
+<p class="text-start text-xl-start">Alineacion al centro en pantallas pequeñas y alineacion al inicio en pantallas iguales o mayores extra large</p>
+```
+
+Usando la clase `.text-break` evitamos que las palabras muy largas rompan el layout, cortandolas en trozos.
+
+Clases para el trabajo con mayúsculas y minúsculas.
+```html
+<p class="text-lowercase">Lowercased text.</p>
+<p class="text-uppercase">Uppercased text.</p>
+<p class="text-capitalize">CapiTaliZed text.</p>
+```
+
+Se puede seguir revisando la documentacion en busca de más funcionalidades, la mayoria muy útiles. Aquí se detallan las más básicas, con el fin de comprender y utilizar bootstrap.
+
+## Imágenes Responsive:
+Para colocar imágenes adaptables en nuestro sitio web, solo debemos agregar la clase `.img-fluid`, no sin antes haber establecido un `max-width: 100%` y un `height: auto`. De este modo la imágen se escalará respecto al ancho de su contenedor.
+```css
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+```
+```html
+<img src="" class="img img-fluid" alt="">
+```
+
+## Componentes de Bootstrap:
+Bootstrap 5 ya trae incorporados algunos componentes como botones, headers, etc. Los cuales podemos utilizar y personalizar, de este modo podemos maquetar páginas web velozmente. A continuacion nombraremos los componentes actualmente disponibles y explicaremos algunos detalles de su uso, ya que seria una perdida de tiempo explicarlos teniendo disponible la documentación oficial.
+
+1. Botones: Utilizando la clase `.btn` y asginandola a una etiqueta tipo `<a></a>` o `<button></button>`, podemos reiniciar los estilos en css de estas etiquetas y crear botones genéricos y atractivos.
+
+Para que las tecnologias de asistencia como los lectores de pantalla, puedan detectar que nuestros botones son especificamente eso, debemos asignarles un parámetro llamado "role", en este caso `role="button"` o `role="group"` según sea el caso. Además los botones, grupos de botones y barras de herramientas deben tener asignado un `aria.label=""` con un nombre explicito (si la etiqueta es una barra de herramientas, como valor del parámetro se colocará toolbar1 por ejemplo). De este modo aseguramos que las tecnologias de asistencia funcionen correctamente.
+
+Se pueden crear botones de bloque, los cuales ocupen el 100% del largo de su contenedor. Para ello tenemos dos opciones, la primera es la más recomendada y la segunda otra alternativa un poco menos trabajosa.
+```html
+<!--Método recomendado-->
+<div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">Button</button>
+  <button class="btn btn-primary" type="button">Button</button>
+</div>
+
+<!--Método menos trabajoso-->
+<button class="btn btn-dark w-100">Boton de "Bloque"</button>
+```
+
+2. Alerts: Las alertas en bootstrap son contenedores que muestran un mensaje en pantalla (no lo hacen con una ventanilla emergente en la ventana). Estas se indican con la clase `alert`. En general a los alerts se les coloca un color warning (amarillo) o danger (rojo). Se les pueden agregar íconos o algunas funcionalidades simples.
+
+3. Badge: Son pequeños componentes de conteo y etiquetado que se colocan dentro de otros para proporcionar información extra. Su uso más extendido es para colocar la etiqueta de notificación encima de algún elemento. A continuación mostramos dos simples ejemplos de lo anterior.
+```html
+<button type="button" class="btn btn-primary">
+  Notifications <span class="badge bg-secondary">4</span>
+</button>
+
+<button type="button" class="btn btn-primary position-relative">
+  Inbox
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    99+
+    <span class="visually-hidden">unread messages</span>
+  </span>
+</button>
+```
+
+4. Card: Bootstrap ya trae preparado um modelo estándar de tarjeta. Su uso es muy simple y no tiene mayores complicaciones, debemos acordarnos de colocar siempre un width al contenedor con la clase `.card` para poder dimensionar la tarjeta. Se recomienda que las imágenes a colocar esten previamente dimensionadas para evitar problemas.
+
+5. Listas: Se pueden crear listas no ordenadas en bootstrap las cuales además se pueden utilizar dentro de otros elementos como tarjetas.
+
+6. Collapse: Nos permite que al presionar un boton o un ancla, se despliegue o se "colapse" una seccion con información complementaria.
+
+7. Accordion: Los acordiones son elementos similares al componente collapse y nos permiten generar distintos bloques con la clase `accordion-item` los cuales se comportan como elementos desplegables. Todos los accordion-item deben estár encerrados dentro de un contenedor con la clase `accordion`.
+
+8. Dropdowns: Son menús que se despliegan a través de un boton. Son muy parecidos a los button desplegables que analizamos en el aparado de botones en grupos.
+
+9. Modales: Son pequeñas ventanas emergentes que aparecen superpuestas al resto del contenido de la página web. Estos modales pueden contener texto, botones, etc. Cuando se hace click fuera de la tarjeta del modal este desaparece.
+Utilizando static-backdrop podemos hacer que nuestro modal no desaparezca a menos que se presione un boton especifico del mismo. Es decir estamos obligando al usuario a que interactue con nuestro modal.
+
+10. Navbar: Con el uso de bootstrap podemos crear barras de navegación estáticas y responsive de manera muy sencilla, dentro de ellos podemos colocar imagenes, botones menús desplegables, etc.
+
+11. Carrousel: Los carruseles con sliders de imagenes en bootstrap, estos se crean de manera muy sencilla y permiten ser responsive.
+
+12. Spinners: Son aquellas rueditas de carga que aparecen al iniciar una página web. El uso de estos spinners debe estar relacionado con la carga de datos del servidor.
+
+13. Popovers: Son pequeñas tarjetas con información complementaria que aparecen al seleccionar un botón, se utilizan más en aplicaciones para mobile.
+
+14. Tooltips: Son textos de ayuda que aparecen al lado de un botón cuando el componente se encuentre debajo del cursor.
+
+## Formularios:
+El uso de formularios en bootsrap no trae mayores problemas, aunque ahora se involucra el uso de javascript para las validaciones y los eventos. Pero esto no aporta ninguna otra complejidad a lo aprendido hasta ahora. Las modificaciones alteran el aspecto visual modificando las clases de los `.form` y sus consecutivos elementos.
+Esto mediante el uso de los métodos: `.addEventListener();` o `.documentQuerySelector();`.
+
+## Personalizar Boostrap con SASS:
+Las personalizaciones de bootstrap con sass vienen dadas de descargar una carpeta de archivos JS y SASS e importar los componentes a utilizar en un archivo SASS propio. Este nuevo archivo SASS al compilarse heredará todos los estilos de SASS de bootsrap además de las personalizaciones que le hayamos hecho. Finalmente esto se exportara en un archivo CSS el cual leera el navegador.
+El archivo CSS generado puede llegar a se muy largo, así que es recomendable solo importar los elementos y componentes que sean pertinentes.

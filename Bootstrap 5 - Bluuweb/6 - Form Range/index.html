@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Ejercicio con Rango</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center my-5">
+            <h1 class="fw-bold mb-3">Simple, fraffic-based pricing</h1>
+            <p class="text-muted">Sign-up for our 30-day trial. No credit card required.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="card shadow rounded border-0 bg-dark text-light">
+                    <div class="row text-center align-items-center">
+                        <div class="col-12 col-md-6 order-1 my-3">
+                            <p class="m-0 h2 fw-bold">$<span id="price">24</span>.00 / <span class="text-muted h6 align-middle">month</span></p>
+                        </div>
+
+                        <div class="col-12 col-md-6 order-3 order-md-2">
+                            <p class="m-0"><span class="text-primary" id="visits">100K</span> page views</p>
+                        </div>
+
+                        <div class="col-12 order-2 order-md-3 px-4">
+                            <input type="range" class="form-range" min="8" max="40" step="8" id="customRange">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check2-square text-primary"></i>Unlimited Websites</li>
+                                <li><i class="bi bi-check2-square text-primary"></i>100% updates data ownership</li>
+                                <li><i class="bi bi-check2-square text-primary"></i>Email report</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-outline-primary my-3">Acceder</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</body>
+
+<script src="js/script.js"></script>
+</html>
