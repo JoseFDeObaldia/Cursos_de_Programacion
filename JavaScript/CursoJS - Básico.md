@@ -572,7 +572,7 @@ const item = document.createElements("LI");                                  //C
 const textoDelItem = document.createTextNode("Este es un item de la lista"); //Creamos un nodo con texto.
 const fragmento = document.createDocumentFragment();                         //Creamos una porcion de código HTML. 
 ```
-De los trés metodos de creacion de elementos el más util es ".createDocumentFragment()", la ventaja del mismo es que podemos crear muchos elementos y agregarlos a todos de una vez. De este modo la PC no tiene que regenerar la interfaz cadda vez que se agrega algo nuevo.
+De los tres metodos de creacion de elementos el más util es ".createDocumentFragment()", la ventaja del mismo es que podemos crear muchos elementos y agregarlos a todos de una vez. De este modo la PC no tiene que regenerar la interfaz cadda vez que se agrega algo nuevo.
 Veamos por ejemplo un uso práctico de createDocumentFragment() para crear 20 elementos "li".
 ```javascript
 const contenedor = document.querySelector(".contenedor"); //Seleccionamos un elemento contenedor, el cual almacenara todos los nuevos elementos.

@@ -62,9 +62,7 @@ Sigamos viendo algunos métodos y propiedades del objeto window.
 17. moveBy() mueve la ventana en una ubicación relativa.
 18. moveTo() mueve la ventana en una ubicacion absoluta.
 
-```javascript
+Estas propiedades las veremos más adelante a detalle.
 
-
-```
 ## Location:
 Son una serie de métodos que nos devuelven información acerca de la locación de los archivos y documentos de la página web.
