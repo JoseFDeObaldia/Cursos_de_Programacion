@@ -11,12 +11,23 @@ el corazón de bootstrap 5.
 
 ## Breakpoints normalizados:
 Bootstrap trae personalizados una serie de puntos de quiebre para marcar la diferencias en distintos tipos de pantallas, esto es muy útil al trabajar con diseños web responsive.
-1. x-small            ninguno      pantallas <  576px
-2. small               "sm"        pantallas >= 576px
-3. medium              "md"        pantallas >= 768px
-4. large               "lg"        pantallas >= 992px
-5. extra large         "xl"        pantallas >= 1200px
-6. extra extra large   "xxl"       pantallas >= 1400px
+1. x-small - ninguno - pantallas < 576px
+2. small - "sm" - pantallas >= 576px
+3. medium - "md" - pantallas >= 768px
+4. large - "lg" - pantallas >= 992px
+5. extra large - "xl" - pantallas >= 1200px
+6. extra extra large - "xxl" - pantallas >= 1400px
+
+```scss
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+```
 
 ## Container.
 Los contenedores son un bloque de construcción fundamental en Bootstrap, ellos agrupan los demas elementos, y alinean el contenido dentro de un dispositivo o ventana gráfica determinada.

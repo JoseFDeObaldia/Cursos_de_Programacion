@@ -111,7 +111,7 @@ La etiqueta `<article></article>` nos sirve para agrupar trozos de código compl
 ```
 
 ## Aside:
-Las barras laterales o ``<aside></aside>` en una página web son útiles para mostrar información complementaria y submenús.
+Las barras laterales o `<aside></aside>` en una página web son útiles para mostrar información complementaria y submenús.
 ```html
 <aside>
 	<h5>Información complementaria</h5>
