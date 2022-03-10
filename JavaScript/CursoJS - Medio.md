@@ -305,24 +305,346 @@ try {
 ```
 
 ## Callbacks:
-Conceptualmente un callback es una funcion dentro de otra función.
+Conceptualmente un callback es una funcion que se pasa a otra función como un argumento y que luego se innvoca dentro de la función mayot para completar algun tipo de rutina o acción. Es decir es una función dentro de otra función.
 
+- Una función "callback" es aquella que es pasada como argumento a otra función para que sea "llamada de nuevo" (call back) en un momento posterior.
+
+- Una función que acepta otras funciones como argumentos es llamada función de orden-superior (High-Order), y contiene la lógica para determinar cuándo se ejecuta la función callback.
+
+Es la combinación de estas dos la que nos permite ampliar nuestra funcionalidad.
 ```javascript
-function prueba(callback) {
-    callback('pedro');
+//Función de orden superior: Llamamos a la función por parámetros y la ejecutamos dentro de la high order function.
+function funcionOrdenSuperior (funcionCallback) {
+    let nombre = "juan";
+
+    funciónCallback(nombre);
 }
 
+//ejecutamos la high order function pasandole por parámetros la funcionCallback, la cual imprime "Mi nombre es", seguido del nombre que le pasemos por parámetros.
+funcionOrdenSuperior = (function funcionCallback (nombre) {
+    console.log(`Mi nombre es: ${nombre}`);
+});
+```
+Notesé que en este caso la high order function posee dentro la logica que llama a la funcionCallback y ya le asigna un parámetro para esa función. El parámetro nombre con el valor "Juan". POdriamos escribir la funcion de callback con la sintaxis de funciones flecha.
+
+Veamos otro ejemplo de un callback para tomar datos de un arreglo.
+```javascript
+//Un arreglo con objetos, cada objeto simula ser un post de una aplicación.
+const posts = [
+    {   "userId": 36001,
+        "id": 1,
+        "title": "lorem ipsum" },
+
+    {   "userId": 00546,
+        "id": 2,
+        "title": "lorem ipsum dolor sit" },
+    
+    {   "userId": 12508,
+        "id": 3,
+        "title": "lorem ipsum dolor sit" }
+];
+
+//high order function, le pasamos el id y el parámetro del callback. La función obtiene el objeto post correspondiente al ID y luego llama a la función callback.
+function findPostById (id, callback) {
+    const post = posts.find(item => item.id === id);
+
+    callback(post);
+}
+
+//Llamamos a la high order function y le pasamos por parámetros la función callback que imprimira el objeto post, la misma está escrita como arrow function.
+findPostById = (1, (post) => {
+    console.log(post);
+});
+```
+Existe un problema al trabajar con callbacks y es que al trabajar datos, por ejemplo para validarlos, se genera un codigo espagueti muy poco legible y confuso. Pensemos en que sucederia si ejecutamos callbacks dentro de callbacks.
+La forma de solucionarlo es con las promesas, las cuales veremos a continuación.
+
+
+## Promesas:
+Son una evolucion de los callbacks y resuelven el problema de la legibilidad del código.
+Las promesas son un objeto que a su vez tienen dos callbacks dentro, `resolve` y `reject`. Donde resolve representa la finalizacion de una operación asincrona y reject el fracaso de una operacion asincrona.
+
+Su funcionamiento es simple:
+- Creamos una nueva instancia de la clase "Promise", y le pasamos dos parámetro a nuesto objeto (el cual llamaremos promesa).
+- 
+```javascript
+//creamos una variable para efectuar un condicional
+var nombre = "pedro";
+
+//creamos un objeto promise y lo guardamos en la variable promesa. La variable "promesa" es una nueva instancia de Promise.
+const promesa = new Promise((resolve,reject) => {
+
+    //si la función se cumple, se ejecuta el método resolve, que en este caso nos devuelve el valor de la variable nombre, caso contrario se ejecuta el método reject, el cual nos da un mensaje de error.
+    if(nombre == "pedro") {
+        resolve(nombre);
+    } else {
+        reject("Lo siento, el nombre no es pedro");
+    }
+});
+
+//Imprimimos lo que nos devuelva el objeto promesa colocando al lado de "promesa" los métodos then() para el resolve y catch() para el reject.
+console.log(promesa.then().catch());
+```
+Con esto podemos realizar las mismas operaciones que con los callbacks, pero sin el código anidado.
+
+## Async y Await:
+Antes de ver este nuevo tema debemos dejar en claro que con el uso de promesas y las palabras reservadas `async` y `àwait`, el código javascript comenzará a ser asíncrono. Es decir que se ejecutará la petici+on de la promesa en segundo plano, pero el resto del código seguirá corriendo.
+Lo anterior es útil cuando estas peticiones se realizan a la base de datos, veamos un ejemplo de uso de async y await.
+```javascript
+//creamos un campo de datos
+const data = [
+    prop1: "valor 1",
+    prop2: 25,
+    prop3: false
+];
+
+//Creamos una promesa que retorne el objeto datos.
+const obtenerDatos = ()=> {
+    return new Promise(resolve,reject) => {
+        resolve(datos);
+    };
+}
+
+//creamos una función asincrona que muestre el resultado con await,
+const mostrarResultado = async ()=> {
+    resultado = await obtenerDatos();
+    console.log(resultado);
+}
+
+//Ejecutamos la funcion mostrar resultado.
+mostrarResultado();
+```
+Notese que con el uso de await nos libramos de usar los métodos `.then()` y `.catch()`.
+
+## Peticiones HTTP:
+Una petición HTTP es una solicitud que enviamos desde nuestra página web a un servidor. El servidor luego nos dará una respuesta
+
+## Datos estructurados JSON:
+JSON significa "javascript object notacion" y es la forma que tenemos con javascript para enviar datos. La notación de archivos JSON es similar a la de un array asociativo, solo que tanto los nombres de variables como los valores de las variables estan entre comillas. Esto es debido a que los servidores tienen problemas para leer strings que no esten encerrados entre comillas.
+
+```javascript
+//Array Asociativo.
+const array = {
+    nombre1: "pedro",
+    nombre2: "juan",
+    nombre3: "lucia"
+}
+
+//Notacion JSON.
+const datos = {
+    "nombre1": "pedro", 
+    "nombre2": "juan",
+    "nombre3": "lucia"
+}
+```
+Cuando trabajamos con archivos JSON, para poder enviarlos debemos serializarlos, es decir convertirlos en un string. Esto se hace colocando comillas al contenido del objeto. Por ejemplo:
+```json
+//JSON serializado.
+const datos = '{
+    "nombre1": "pedro", 
+    "nombre2": "juan",
+    "nombre3": "lucia"
+}';
+
+//JSON des-serializado.
+const datos = {
+    "nombre1": "pedro", 
+    "nombre2": "juan",
+    "nombre3": "lucia"
+};
+```
+usando la funcion `.stringify()` serializamos el JSON, usando la función `.parse()` des-serializamos el JSON.
+
+Algunos navegadores como internet explorer no soportan JSON por lo que para estos navegadores se utilizan funciones ``.polyfill` las cuales convierten datos JSON en funciones.
+
+Cabe aclarar además que existen muchos polyfill para convertir distintos tipos de datos.
+
+## AJAX:
+Cuando realizamos peticiones HTTP el navegador se refrezca cada vez que el servidor nos de una respuesta.
+Ajax nos permite realizar peticiones HTTP y recibir datos pero evitando que la página se refrezque, esto es lo más óptimo.
+
+#### Objeto XMLHttpRequest:
+El objeto XMLHttpRequest es un objeto que nos permite realizar peticiones a bases de datos.
+
+Para realizar una petición a un servidor debemos:
+1. realizar una nueva instancia del objeto "XMLHttpRequest".
+2. A esta nueva instancia agregarle el evento "readystateChange" junto con la función a ejecutar.
+3. ejecutar el método `.open` en el objeto instanciado especificando el método de petición (en este caso 'GET' y el archivo que queremos recibir.).
+4. Ejecutar el método ``.send()` el cual envia la petición.
+5. La función a ejecutar en el eventListener deberia tener al menos las dos validaciones básicas. Verificar que el readyState tenga un valor de tres o cuatro y validar que el codigo de status sea 200.
+
+Los métodos HTTP son formas de enviar y recibir datos. Existen muchos métodos y cada uno se implementa de manera distinta, los más conocidos son `get` y `post`.
+
+El objeto XMLHttpRequest posee muchos métodos, entre ellos `.open()`, `.send()`, etc.
+
+El objeto XMLHttpRequest además posee muchos atributos, entre ellos podemos nombrar el `readyState`, que es un atributo que nos dice el estado de nuestra solicitud. Con un valor de 1 la peticion se envió correctamente, con 2 la petición se recibio en el servidor correctamente, con 3 se proceso la petición y con 4 se obtuvo una respuesta. Otro atributo es el `status`, el cual tiene muchos valores o códigos posibles. Con 200 significa que la petición se realizo correctamente y tenemos un archivo recibido, con 404 significa que no se encontró el archivo buscado en el servidor.
+
+Veamos todo lo anterior en unas lineas de código:
+```javascript
+const peticion = new XMLHttpRequest();
+
+peticion.addEventListener("readyStateChange", ()=> {
+    if(peticion.readyState == 4 && peticion.status == 200) {
+        console.log(peticion.response);
+    } else {
+        alert("Ocurrio un error en la petición");
+    }
+});
+
+peticion.open("GET", "archivoQueDebemosBuscar.txt");
+
+peticion.send();
+```
+La forma ejemplificada anteriormente es la más antigua y manual. Actualmente se utiliza el evento "load" para ejecutar peticiones, veamos como se implementa con este nuevo evento:
+```javascript
+const peticion = new XMLHttpRequest();
+
+peticion.addEventListener("load", ()=> {
+    let respuesta;
+
+    if(peticion.status == 200) {
+        respuesta = peticion.response();
+    } else {
+        respuesta = "Lo siento, no se encontró el recurso";
+    }
+
+    console.log(respuesta);
+});
+
+peticion.open("GET", "archivoEnElServidor.txt");
+
+peticion.send();
+```
+## ActiveXObject:
+El objeto XMLHttpRequest no es soportado por internet explorer, por lo que para este navegador se dispuso de un método llamado "ActiveXObject". Debido a que internet explorer no es muy usado actualmente debemos crear un condicional que verifique si estamos en este navegador.
+```javascript
+if (window.XMLHttpRequest) {
+    peticion = new XMLHttpRequest();
+} else {
+    peticion = new ActiveXObject("Microsoft.XMLHTTP");
+}
+```
+Con el código anterior decimos que si el objeto XMLHttpRequest existe en window, entonces que se cree una nueva instancia del mismo, caso contrario estariamos navegando en internet explorer y por lo tanto instanciamos el objeto ActiveXObject.
+El resto de los pasos vistos para efectuar las peticiones se mantiene igual.
+
+## typeoff():
+Este es un método que nos devuelve el tipo de dato de la variable que le damos por parámetros.
+
+## Peticiones Post:
+Del mismo modo en el realizamos una petición HTTP con el método "GET", podemos hacerlo con otro método llamado "POST".
+Las diferencias entre los dos métodos son, entre otras, que mientras el método get envia los datos a traves de la url y por lo tanto la cantidad de datos a enviar es limitada, con el método post los datos se envian de manera independiente y su longitud es ilimitada.
+
+## Fetch:
+Fetch es otro objeto que nos permite realizar peticiones, actualmente este objeto esta reemplazando a AJAX. Fetch trabaja con promesas y devuelve siempre una promesa encapsulada por lo que deberemos formatearla a un archivo json.
+
+```javascript
+//creamos un fetch que se guardará en la variable petición.
+const peticion = fetch("https://recursos.com");
+
+peticion
+    .then(respuesta => respuesta.json());
+    .then(respuesta => console.log(respuesta));
+
+//el primer then formatea la respuesta a JSON y el segundo then la imprime.
+
+//si deseamos formatear a texto usamos .text()
+```
+Notese que utilizamos metodos distintos para desencapsular archivos JSON y promesas. Con JSON usamos stringify y parse. Con promesas usamos `.json()`.
+
+Fetch tiene el metodo HTTP get por defecto, para cambiar el método debemos pasarle por parámetros un array con configuración.
+```javascript
+fetch("https://recursos.com", {
+    method: "POST",
+    body: `{
+        "nombre" : "Lucas",
+        "apellido" : "dalto"
+    }`,
+    headers: {"Content-type" : "application/json"}
+});
+
+
+    .then(res =>res.json());
+    .then(res => console.log(res));
+
+
+//Otra forma más legible:
+let headers = {
+    method: "POST",
+    body: `{"nombre" : "Lucas","apellido" : "dalto"}`,
+    headers: {"Content-type" : "application/json"}
+
+fetch("https://recursos.com", headers);
+
+    .then(res =>res.json());
+    .then(res => console.log(res));
 ```
 
+## Axios:
+Es una libreria que nos permite crear peticiones, es una tercera opción mucho más actual que AJAX y Fetch. Axios esta basada en promesas pero utiliza la tecnologia XMLHttpRequest, la gracia de esta libreria es que optimiza tanto el código que practicamente no pesa nada. Se puede encontrar el código fuente en github.
+
+Al descargar axios se lo puede insertar en el documento con un script. Se aconseja colocar el script al inicio de todos los demás para asegurarnos que todo funcione. Ya que no podemos ejecutar funciones que todavia no fueron creadas.
+
+Veamos en pocas lineas como usar esta libreria de forma elemental.
+```javascript
+//solicitando el txt por GET
+axios("informacion.txt")
+    .then(res => console.log(res.data));
+
+//solicitando el txt por POST
+axios.post("informacion.txt")
+    .then(res => console.log(res.data));
+
+//Enviando un objeto JSON a un servidor del sitio web
+axios.post("https://reqres.in/api/users", {"nombre": "lucas", "apellido": "ramirez"})
+    .then(res => console.log(res));
+
+//tambien podemos colocar más configuracion dentro del objeto y no solo usarlo para enviar solamente informacion.
+axios("https://reqres.in/api/users", {
+    method: "post",
+    data: {"nombre": "lucas"}
+})
+    .then(res => {console.log(res)});
+```
+
+## Fetch y Axios con Async y Await:
+Se puede combinar fetch con axios y operaciones asincronas para de este modo aprovechar async y await, ya que en consultas grandes que consumen muchos recursos, un tiempo excesivo de espera genera un error en axios.
 
 
+## Operador .this()
+El operador this es una forma de llamar al objeto contexto de JavaScript en el cual se está ejecutando el código actual. Es decir hace referencia al elemento en el que se esta ejecutando.
+Si this se usa en el contexto de ejecucion global (fuera de cualquier funcion u objeto), este operador se refiere al objeto global.
+
+Ejemplos de uso de ``.this` en contextos locales o de funciones.
+```javascript
+//Un ejemplo
+function f1(){
+  return this;
+}
+
+f1() === window; // objeto global
 
 
+//otro ejemplo.
+var o = {
+  prop: 37,
+  f: function() {
+    return this.prop;
+  }
+};
 
+console.log(o.f()); // logs 37
+```
 
+Ejemplos de uso de `.this` en contextos globales.
+```javascript
+console.log(this.document === document); // true
 
+// En los navegadores web, el objeto window también es un objeto global:
+console.log(this === window); // true
 
+this.a = 37;
+console.log(window.a); // 37
+```
+El valor de this permanecera en el estado en el que se encuentre actualmente si se trabaja en modo estricto.
 
-
-
-
+Finn de la parte mid-level, vamos Joseee!!

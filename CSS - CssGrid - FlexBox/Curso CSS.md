@@ -874,7 +874,7 @@ Cuando una imagen tiene mucho contenido, el background tiende a ser muy largo. P
 ```css
 	background-repeat: no-repeat; /*repeat o no-repeat*/
 ```
-Las propiedades `background-clip` y ``background-origin` son dos propiedades para indicar el area desde donde se coloca la imagen en nuestro contenedor, tomando en cuenta el padding, el borde, el contenido, etc. `background-clip` recorta la imagen para colocarla y `background-origin` posiciona la imagen para colocarla (luego la recorta).
+Las propiedades `background-clip` y `background-origin` son dos propiedades para indicar el area desde donde se coloca la imagen en nuestro contenedor, tomando en cuenta el padding, el borde, el contenido, etc. `background-clip` recorta la imagen para colocarla y `background-origin` posiciona la imagen para colocarla (luego la recorta).
 ```css
 .fondo {
 	background-clip: border-box;
