@@ -130,7 +130,7 @@ Otra utilidad importante es el uso del selector placeholder `%`, el cual nos evi
 }
 ```
 
-## Iport:
+## Import:
 Con ``@import` podemos añadir estilos de otras hojas de estilo, ya sean CSS o SASS, al documento actual.
 ```SCSS
 //Un ejemplo de importación de mixins.

@@ -388,7 +388,7 @@ console.log(promesa.then().catch());
 Con esto podemos realizar las mismas operaciones que con los callbacks, pero sin el código anidado.
 
 ## Async y Await:
-Antes de ver este nuevo tema debemos dejar en claro que con el uso de promesas y las palabras reservadas `async` y `àwait`, el código javascript comenzará a ser asíncrono. Es decir que se ejecutará la petici+on de la promesa en segundo plano, pero el resto del código seguirá corriendo.
+Antes de ver este nuevo tema debemos dejar en claro que con el uso de promesas y las palabras reservadas `async` y `àwait`, el código javascript comenzará a ser asíncrono. Es decir que se ejecutará la peticion de la promesa en segundo plano, pero el resto del código seguirá corriendo.
 Lo anterior es útil cuando estas peticiones se realizan a la base de datos, veamos un ejemplo de uso de async y await.
 ```javascript
 //creamos un campo de datos
