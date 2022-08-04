@@ -1,0 +1,12 @@
+Para usar sass en react se instala la libreria "npm i sass"
+
+Para usar fontawesome se instala:  
+npm i --save @fortawesome/fontawesome-svg-core  @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome @fortawesome/free-brands-svg-icons 
+
+página oficial de los paquetes a instalar https://www.npmjs.com/package/@fortawesome/react-fontawesome
+
+luego para usarlos se coloca
+import (FontAwesomeIcon) from "@fortawesome/react-fontawesome";
+import {faBell} from "@fortawesome/free-solid-svg-icons"; //para iconos solidos gratuitos por ejemplo
+
+<FontAwesomeIcon icon={faBell} />
