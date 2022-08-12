@@ -1,7 +1,11 @@
-# Curso HTML:
-Este es un curso del lenguaje de marcado HTML, extraido del edutuber Lucas Dalto. El presente archivo debe serir de esquema para crear documentos en HTML5, siempre se debe tener en cuenta que una página en HTML no debe ser atractiva sino estar bien estructurada, ya que los estilos los damos con CSS.
+![Logo.webp](Logo.webp)
 
-## Estructura Básica:
+# CURSO DE HTML:
+Este es un curso del lenguaje de marcado HTML, extraido del edutuber Lucas Dalto. El presente archivo deberia servir de esquema para crear documentos en HTML5, siempre se debe tener en cuenta que una página en HTML no debe ser atractiva sino estar bien estructurada, ya que los estilos los damos con CSS.
+
+---
+
+## 1. Estructura Básica:
 Un documento HTML posee la siguiente estructura básica y tiene dos partes principales, el HEAD que es lo que "no se ve" y el BODY que es "todo lo que se ve en nuestra página web".
 
 ```html

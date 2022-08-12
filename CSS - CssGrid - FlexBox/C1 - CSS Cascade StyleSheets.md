@@ -980,4 +980,4 @@ div ~ p {
 }
 ```
 
-Finnnn, espero que esto te ayude mucho José del futuro!!
+Fin del curso, espero que esto te ayude mucho a progresar!!

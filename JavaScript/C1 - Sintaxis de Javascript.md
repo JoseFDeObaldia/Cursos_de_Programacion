@@ -9,7 +9,7 @@ Para más información dejamos un enlace muy útil para profundizar en este leng
 
 ---
 
-## 1. VARIABLES
+## 1. VARIABLES, ESTRUCTURAS Y TIPOS DE DATOS
 En Javascript el tipo de dato no se escribe, pero este se inicializa al declarar la variable (tipado debil) y se mapeará constantemente (tipado dinámico). 
 
 ### **1.1. Ámbito de Variables**
@@ -41,6 +41,94 @@ Ejemplo: `let variable = null;`
 
 ### **1.2. Typeoff**
 El método `typeoff();` es un método que nos devuelve el tipo de dato de la variable que le damos por parámetros lo cual es sumamente útil durante el desarrollo.
+
+### **1.3. Tipos de datos**
+El último estándar ECMAScript define nueve tipos, Seis tipos de datos primitivos, controlados por el operador `typeof()`
+|Tipo de dato| Retorno de typeoff()|
+|:---:|:---:|
+|`Undefined`| typeof instance === "undefined"|
+|`Boolean`| typeof instance === "boolean"|
+|`Number`| typeof instance === "number"|
+|`String`| typeof instance === "string"|
+|`BigInt`| typeof instance === "bigint"|
+|`Symbol`| typeof instance === "symbol"|
+
+Y tres tipos de datos "object". `typeoff instance === "object"`
+- `Null`: Es un tipo primitivo especial que tiene un uso adicional para su valor: si el objeto no se hereda, se muestra null.
+- `Object`: Es un tipo estructural especial que no es de datos, pero para cualquier instancia de objeto construido que también se utiliza como estructuras de datos: new Object, new Array, new Map, new Set, new WeakMap, new WeakSet, new Date y casi todo lo hecho con la palabra clave new;
+- `Function`:  Es una estructura sin datos, aunque también responde al operador typeof: typeof instance === "function". Esta simplemente es una forma abreviada para funciones.
+
+Luego en javascript se pueden hacer uso de dos estructuras de datos principalmente, los arrays y las tablas de hash (arrays asociativos).
+
+### **1.4. Arrays:**
+Son arreglos de datos donde se pueden almacenar muchas variables, en ellos no importa el tipo de variable ya que los espacios en memoria aceptan todo tipo de datos.
+```javascript
+arrayDeEjemplo = ["pedro", false, 24, "Buenos Aires", 1.90, "Manzana"];
+
+document.write(arrayGenerico); //Imprimimos todo el array.
+document.write(arrayGenerico[0]); //Imprimimos el primer elemento del array, es decir el elemento con la posicion cero.
+```
+
+### **1.5. Array Asociativo o Diccionario:**
+Es un array que asocia cada dato con un identificador, este identificador reemplaza al numero de posicion. Al usar arrays asociativos tenemos la ventaja de que la toma de datos datos es mucho más intuitiva.
+```javascript
+//Generamos un array llamado "pc".
+let pc = {
+    nombre: "Juanito-PC",
+    procesador: "Intel Core I7",
+    ram: "16GB",
+    almacenamiento: "1Tb",
+    pantalla = "16 pulgadas",
+    sistema: "Windows 10"
+}
+
+//Imprimimos el array, para ello debemos guardar los datos en una serie de varables que luego mandaremos a llamar, dentro de la funcion "document.write();".
+let nombre = pc["nombre"], procesador = pc["procesador"], ram = pc["ram"], almacenamiento = pc["almacenamiento"], pantalla = pc["pantalla"], sistema = pc["sistema"];
+
+frase = `El nombre de la PC es: ${nombre} <br>
+         El procesador es: ${procesador} <br>
+         La memoria RAM es: ${ram} <br>
+         El almacenamiento en disco es: ${almacenamiento} <br>
+         El tamaño de la pantalla es: ${pantalla} <br>
+         El sistema operativo es: ${sistema} <br>`;
+
+document.write(frase);
+```
+
+### **1.6. Datos estructurados JSON:**
+JSON significa "javascript object notacion" y es una convención para la escritura de diccionarios (arrays asociativos), en donde ambos pares clave y valor, deben estár seteados como strings. Esto es debido a que los servidores tienen problemas para leer strings que no esten encerrados entre comillas. No es propiamente una estructura de datos, sino que es una convención en la notación.
+
+```javascript
+//Array Asociativo. Comillas no obligatorias en las key
+const array = {
+    nombre1: "pedro",
+    nombre2: "juan",
+    nombre3: "lucia"
+}
+
+//Notacion JSON.
+const datos = {
+    "nombre1": "pedro", 
+    "nombre2": "juan",
+    "nombre3": "lucia"
+}
+```
+
+### **1.7. Sentencias "for in" y "for of":**
+Son dos sentencias que nos permiten trabajar con arreglos. Con "for-in" asignamos una variable contador que recorra el arreglo (en este caso el arreglo es animales), y luego devolvemos la posicion de cada elemento en el arreglo.
+let animales = ["gato", "perro", "perico", "cobayo"];
+```javascript
+for (animal in animales) {
+    document.write(animal + "<br>");            //Posicion de cada elemento en el arreglo.
+    document.write(animales[animal] + "<br>");  //Valor de cada elemento en el arreglo.
+}
+```
+Con "for of" podemos mostrar el valor de cada elemento de manera más directa.
+```javascript
+for (animal of animales) {
+    document.write(animal + "<br>");
+}
+```
 
 ---
 
@@ -76,43 +164,27 @@ num1**num2;  //potencia de base num1
 ```
 
 ### **2.3. Operadores Lógicos o de Comparación:**
-Los operadores de comparación se usan para comparar valores y devolver un resultado que sea True, False o Null. Es decir se usan para validaciones lógicas y retornan un valor Booleano. 
+Los operadores de comparación se usan para comparar valores y devolver un resultado que sea True, False o Null. Es decir se usan para validaciones lógicas y retornan un valor Booleano. En javascript poseemos los siguientes operadores:
 
-```javascript
-let num1 = 23;
-let num2 = "13";
+|Operador|Descripción|
+|:---:|---|
+| == |Validamos si el valor de las dos variables es igual, independientemente del tipo de dato.|
+| != |Validamos si el valor de las dos variables es desigual, independientemente del tipo de dato.|
+| === | Validamos la igualdad estricta. Valor y tipo de dato|
+| !== | Validamos la desigualdad estricta. Valor y tipo de dato|
+| > |Mayor que|
+| < |Menor que|
+| >= |Mayor o igual que|
+| <= |Menor o igual que|
 
-//Con el operador == validamos si el valor de las dos variables es igual, independientemente del tipo de dato.
-num1 == num2;
-
-//Con el operador != validamos si el valor de las dos variables es desigual, independientemente del tipo de dato.
-num1 != num2;
-
-//Con los operadores === y !== validamos si son estrictamente iguales o desiguales respectivamente, es decir validamos la igualdad o desigualdad del valor y la igualdad o desigualdad del tipo de dato.
-num1 === num2
-num1 !== num2
-
-//Con > validamos si num1 es mayor a num2. 
-num1 > num2
-
-//Con > validamos si num1 es menor a num2.
-num1 < num2
-
-//Con > validamos si num1 es mayor o igual a num2.
-num1 >= num2
-
-//Con > validamos si num1 es menor o igual a num2.
-num1 <= num2
-
+```js
 //Operador de Coalescencia nula. Devuelve el valor de la derecha si lo de la izquierda es null.
 const foo = null ?? 'default string';
 console.log(foo);
 // salida esperada: "default string"
 ```
-Notese que todos los operadores lógicos trabajan devolviendo valores booleanos, es decir valores de true o false. Luego, a los operadores `==` y `!=` se los llama operadores de "semejanza" y a los operadores `===` y `!==`, se los llama operadores de "equivalencia".
 
 ### **2.4. Otros operadores Lógicos:**
-Estos operadores se utilizan en conjunto con los anteriores para realizar múltiples validaciones en una sola operación.
 
 __Operador AND:__ Si todas las condiciones booleanas son verdaderas, devuelve _true_, caso contrario devuelve _false_.
 ```javascript
@@ -135,28 +207,12 @@ __Operador NOT:__ Devuelve el valor opuesto, es decir que si la sentencia se cum
 !(num1 < num2);
 ```
 
-Existen otros operadores basados en puertas lógicas, estos en general no están incluidos por defecto en los lenguajes, pero se pueden modelar a partir de los operadores anteriores. Un ejemplo de modelado es con el operador `xor`. El cual en una funcion javascript se vería de la siguiente manera:
-```javascript
-function xor(a,b) {
-    return(a === !b);
-}
-```
-Donde retornará verdadero solo si ámbas proposiciones booleanas, (`a` y `b`) son distintas. Su tabla de verdad sería la siguiente:
-
-![Img1.png](Img1.png)
-
-Tambien es importante aclarar la nocion de _"Cortocircuitar"_ en el operador `AND`, la cual es una palabra de la jerga condicional y que expresa que una expresion condicional, por más larga que sea, dejará de evaluarse si se dan determinados casos. Por ejemplo, basta con que en la siguiente expresión, la primer sentencia (`a == b`) retorne _false_, para que toda la expresion se deje de analizar.
-
-`a == b && c !== (a + b) && d === ((c + b) - a)`
-
-Entender esto resulta útil en la optimización de operaciones booleanas complejas o repetitivas, ya que siempre será más óptimo colocar la condición más sencilla de resolver al inicio.
-
 ---
 
 ## 3. OBJETO MATH
-Sin entrar aún en el paradigma de Programación Orientada a Objetos, podemos decir que el objeto math es una funcionalidad de javascript que posee una gran cantidad de procedimientos almacenados adosados a este. Estos procedimientos o métodos nos son muy útiles para realizar cálculos matemáticos.
+El objeto math es una funcionalidad de javascript que posee una gran cantidad de procedimientos almacenados los cuales nos son muy útiles para realizar cálculos matemáticos.
 
-Para poder usar estos procedimientos debemos llamar al objeto Math, y seguido a este, separado por un punto, indicar el método del que vamos a hacer uso. Ej: `Math.max();`. Entre paréntesis le pasaremos los datos que se necesiten para los cálculos.
+Para poder usar estos procedimientos debemos llamar al objeto `Math`, y seguido a este, separado por un punto, indicar el método del que vamos a hacer uso. Ej: `Math.max();`. Entre paréntesis le pasaremos los datos que se necesiten para los cálculos.
 
 ```JS
 let n1=10, n2=57, n3=15;
@@ -358,34 +414,19 @@ switch(opcion) {
 ```
 
 ### **5.7. Sentencia "try-catch-finally":**
-Es una sentencia que nos permite manejar excepciones o errores en nuestro programa. 
-
-En general se utiliza cuando al ejecutar nuestra app se genera un error y el programa se detiene. Para evitar esto encerramos nuestro código en una sentencia `try` y si el mismo nos arroja una excepcion, en vez de detenerse ejecutará otra porción de código encerrada en un `catch`.
-Luego existe otra sentencia llamada `finally` que ejecutará una porción de código al final del programa de forma obligatoria.
-
-Bajemos todo esto a un ejemplo:
+Es una sentencia que nos permite manejar excepciones en nuestro programa. Pueden existir uno o más bloques try pero siempre se debe terminar con al menos una cláusula catch o finally. La sintaxis de esta sentencia es la siguiente.
 ```javascript
-var estado = false;
+try { 
+    /*código a ejecutar de forma normal*/ 
+} 
 
-try {
-    let fecha = "8/marzo/2022";
-    function imprimir() {
-        console.log("Texto impreso en la consola el día: " + fecha);
-    }
-    imprimir();
+catch(err) { 
+    /*Captura de la excepción en la variable "err".*/
+    /*Bloque de código a ejecutar en caso de error.*/ 
 }
 
-catch(error) {
-    alert('Lo siento ocurrio un error inesperado');
-    estado = true;
-}
-
-finally {
-    if (estado == false) {
-        console.log("Programa finalizado con éxito");
-    } else {
-        console.log("Programa finalizado con errores");
-    }
+finally { 
+    /*Bloque a ejecutar al finalizar el programa*/
 }
 ```
 Luego la sentencia `throw` nos sirve para arrojar errores. El parámetro "error" en el `catch` recibe estos errores.
@@ -394,8 +435,7 @@ Luego la sentencia `throw` nos sirve para arrojar errores. El parámetro "error"
 try {
     throw ["errorTipo1", "errorTipo2"]
 } catch (error) {
-    console.log("Lo siento ocurrio un:" +
-    e[0] + "en el programa");
+    console.log("Lo siento ocurrio un: " + e[0] + " en el programa");
 }
 //Esto nos arrojara por consola: "Lo siento ocurrio un errorTipo1 en el programa."
 ```
@@ -461,84 +501,9 @@ Todo lo anterior se debe complementar con la sección de programación orientada
 
 ---
 
-## 7. ESTRUCTURAS DE DATOS
-Las estructuras de datos que javascript acepta son los objetos, estos a su vez pueden ser listas o objetos literales.
+## 7.METODOS PARA STRINGS Y ARRAYS: 
 
-### **7.1. Arrays:**
-Son arreglos de datos donde se pueden almacenar muchas variables, en ellos no importa el tipo de variable ya que los espacios en memoria aceptan todo tipo de datos.
-```javascript
-arrayDeEjemplo = ["pedro", false, 24, "Buenos Aires", 1.90, "Manzana"];
-
-document.write(arrayGenerico); //Imprimimos todo el array.
-document.write(arrayGenerico[0]); //Imprimimos el primer elemento del array, es decir el elemento con la posicion cero.
-```
-
-### **7.2. Array Asociativo o Objeto Literal:**
-Es un array que asocia cada dato con un identificador, este identificador reemplaza al numero de posicion. Al usar arrays asociativos tenemos la ventaja de que la toma de datos datos es mucho más intuitiva.
-```javascript
-//Generamos un array llamado "pc".
-let pc = {
-    nombre: "Juanito-PC",
-    procesador: "Intel Core I7",
-    ram: "16GB",
-    almacenamiento: "1Tb",
-    pantalla = "16 pulgadas",
-    sistema: "Windows 10"
-}
-
-//Imprimimos el array, para ello debemos guardar los datos en una serie de varables que luego mandaremos a llamar, dentro de la funcion "document.write();".
-let nombre = pc["nombre"], procesador = pc["procesador"], ram = pc["ram"], almacenamiento = pc["almacenamiento"], pantalla = pc["pantalla"], sistema = pc["sistema"];
-
-frase = `El nombre de la PC es: ${nombre} <br>
-         El procesador es: ${procesador} <br>
-         La memoria RAM es: ${ram} <br>
-         El almacenamiento en disco es: ${almacenamiento} <br>
-         El tamaño de la pantalla es: ${pantalla} <br>
-         El sistema operativo es: ${sistema} <br>`;
-
-document.write(frase);
-```
-
-### **7.3. Datos estructurados JSON:**
-JSON significa "javascript object notacion" y es la forma que tenemos con javascript para enviar datos. La notación de archivos JSON es similar a la de un array asociativo, solo que tanto los nombres de variables como los valores de las variables estan entre comillas. Esto es debido a que los servidores tienen problemas para leer strings que no esten encerrados entre comillas. No es propiamente una estructura de datos nativa de javascript, sino que es una convención en la notación.
-
-```javascript
-//Array Asociativo. Comillas no obligatorias en las key
-const array = {
-    nombre1: "pedro",
-    nombre2: "juan",
-    nombre3: "lucia"
-}
-
-//Notacion JSON.
-const datos = {
-    "nombre1": "pedro", 
-    "nombre2": "juan",
-    "nombre3": "lucia"
-}
-```
-
-### **7.4. Sentencias "for in" y "for of":**
-Son dos sentencias que nos permiten trabajar con arreglos. Con "for in" asignamos una variable contador que recorra el arreglo (en este caso el arreglo es animales), y luego devolvemos la posicion de cada elemento en el arreglo.
-let animales = ["gato", "perro", "perico", "cobayo"];
-```javascript
-for (animal in animales) {
-    document.write(animal + "<br>");            //Posicion de cada elemento en el arreglo.
-    document.write(animales[animal] + "<br>");  //Valor de cada elemento en el arreglo.
-}
-```
-Con "for of" podemos mostrar el valor de cada elemento de manera más directa.
-```javascript
-for (animal of animales) {
-    document.write(animal + "<br>");
-}
-```
-
----
-
-## 8.METODOS PARA STRINGS Y ARRAYS: 
-
-### **8.1. Métodos de Cadenas.**
+### **7.1. Métodos de Cadenas**
 Son métodos para modificar las cadenas de texto o "string".
 
 |Metodo|¿Que Hace?|
@@ -559,44 +524,26 @@ Son métodos para modificar las cadenas de texto o "string".
 |`.trimStart()` | elimina los espacios en blanco al inicio de una cadena |
 |`.valueOf()` | retorna el valor primitivo de un objeto string |
 
-## Métodos de arrays
+### **7.2. Métodos de arrays**
 Al igual que los métodos de cadenas, estos son métodos para modificar los Arrays.
-1. .pop() - elimina el ultimo elemento de un array y lo devuelve.
-2. .shift() - elimina el primer elemento de un array y lo devuelve.
-3. .push() - Agrega un elemento al array al final de la lista.
-4. .reverse() - invierte el orden de los elementos en el array.
-5. .unshift() - agrega uno o más elementos al inicio del array y devuelve la nueva longitud del array.
-6. .sort() - ordena los elementos de un array localmente y devuelve el arreglo ordenado alfabeticamente.
-7. .splice() - cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos.
-8. .join() - une todos los elementos de una matriz en una cadena y la devuelve.
-9. .slice() - devuelve una parte del array dentro de un nueo array empezando por inicio hasta fin (fin no incluido).
-10. .filter() - ejecuta la funcion indicada por parámetros, una vez por cada elemento del array, y nos genera un nuevo array. Se pueden filtrar los elementos con operadores logicos.
-11. .forEach() - ejecuta la funcion indicada, una vez por cada elemento del array. Nos devuelve un nuevo array.
+
+|Metodo|¿Que Hace?|
+|:---:|:---|
+| `.pop()` | elimina el ultimo elemento de un array y lo devuelve.|
+| `.shift()` | elimina el primer elemento de un array y lo devuelve.|
+| `.push()` | Agrega un elemento al array al final de la lista.|
+| `.reverse()` | invierte el orden de los elementos en el array.|
+| `.unshift()` | agrega uno o más elementos al inicio del array y devuelve la nueva longitud del array.|
+| `.sort()` | ordena los elementos de un array localmente y devuelve el arreglo ordenado alfabeticamente.|
+| `.splice()` | cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos.|
+| `.join()` | une todos los elementos de una matriz en una cadena y la devuelve.|
+| `.slice()` | devuelve una parte del array dentro de un nueo array empezando por inicio hasta fin (fin no incluido).|
+| `.filter()` | ejecuta la funcion indicada por parámetros, una vez por cada elemento del array, y nos genera un nuevo array. Se pueden filtrar los elementos con operadores logicos.|
+|`.forEach()` | ejecuta la funcion indicada, una vez por cada elemento del array. Nos devuelve un nuevo array.|
 
 ---
 
-
-
-
-
-## Conceptos de POO:
-La programación orientada a objetos es un paradigma de programacion en donde se busca crear elementos funcionales de manera sencilla e intuitiva. Para ello creamos en primera instancia clases o plantillas generales, que nos permitan objetos diversos pero con cualidades o atributos similares y luego utilizar funciones o métodos para que nuestro objeto adquiera funcionalidad. 
-Su utilidad es que podemos resumir mucho código de forma intuitiva.
-
-1. Clase: Es una porción de código que contendra todas las características o atributos de nuestro objeto (las variables), y todas las cosas que puede hacer nuestro objeto (los métodos). Se utiliza como una base para objetos genéricos. Por ejemplo podemos crear una clase "usuario();" la cual tendra los métodos "notificar();", "consultarSaldo();", "modificar¨Perfil();" y "verCompras();".
-2. Objeto: Es el resultado de instanciar nuestra clase, es decir el elemento que surge cuando llamamos a una clase y la usamos. Este elemento nuevo es un objeto propiamente dicho. Los objetos no dejan de ser colecciones de elementos.
-3. Atributos: Son todas las caracteristicas que tendra nuestro objeto, es decir las variables. Estas se declaran en la "plantilla" clase, dentro de una funcion especial llamada contructor.
-4. Metodos: Los métodos son simplemente funciones clásicas, solo que tienen una sintaxis especial que unicamente se puede usar dentro de la clase.
-5. Constructor: Es una funcion especial y obligatoria que debe tener cualquier clase, aqui se inicializan las variables o atributos que tendrá nuestro objeto.
-6. Métodos estaticos, son métodos que se pueden utilizar sin necesidad de definir ningún objeto. Se los puede llamar y usarlos sin antes crear al objeto.
-7. Polimorfismo: Es la capacidad de un objeto de comportarse de manera distinta dependiendo de los valores de las variables o atributos.
-De esta manera podemos crear un método "notificar();" en una clase "user();" y hacer que este método envie un mail, un whatsapp o un mensaje de texto dependiendo de los atributos que tenga el objeto creado. Por ejemplo un usuario cuyos atributos nos digan que no tiene email o whatsapp pero si un numero de telefono, sera notificado de las novedades solo por mensajes de texto.
-8. Herencia: Es la capacidad de heredar metodos y atributos de otra clase, y usarlas en la nuestra.
-9. Abstraccion: Es una forma de programar clases en donde se busca definir un objeto con las mínimas lineas de codigo, métodos y atributos posibles.
-10. Encapsulamiento: Es declarar nuestras variables de maneras protegidas o privadas, para que los demás objetos o los usuarios inclusive, no puedan acceder a ellos. Esto es por seguridad y para evitar conflictos.
-11. Setter y getter: Los setters son métodos para modificar los atributos de un objeto, con la sentencia "set" definimos o modificamos un atributo, y con la sentencia "get" retornamos el valor de un atributo.
-
-
+## 8. PROGRAMACION ORIENTADA A OBJETOS:
 Realizemos con lo anterior un ejemplo de clase genérica. Esta clase sera la "plantilla" para crear animales.
 ```javascript
 //Declaramos una nueva clase de nombre "animal".
@@ -696,7 +643,7 @@ const perrito = new dog("perro","2 años","gris","doberman");
 perrito.saludar();
 perrito.ladrar();
 ```
-## Operador .this()
+### Operador .this()
 El operador this es una forma de llamar al objeto contexto de JavaScript en el cual se está ejecutando el código actual. Es decir hace referencia al elemento en el que se esta ejecutando.
 Si this se usa en el contexto de ejecucion global (fuera de cualquier funcion u objeto), este operador se refiere al objeto global.
 
@@ -736,7 +683,7 @@ El valor de this permanecera en el estado en el que se encuentre actualmente si 
 
 ---
 
-## 9. USO Y FUNCIONES DE LA CONSOLA 
+## 9. USO Y FUNCIONES DE LA CONSOLA
 El uso de la consola es fundamental para los desarrolladores, en la consola se puede escribir codigo javascript que se ejecutará con el código normal, se pueden retornar valores, mostrar errores y warnings entre muchas otras cosas. Aquí enumeramos algunos métodos muy útiles.
 
 1. .console.assert() - Nos da un mensaje de error si la condicion intorducida es falsa. No se utiliza más.
@@ -1050,9 +997,6 @@ const arr = (a,b, ...argumentos) => {
 ```
 Luego el rest operator debe utilizarse siempre como último parámetro en una función. Ya que define que hacer con los parámetros de resto que nos quedan.
 Notese que la sintaxis de rest es simplemente tres puntos y luego el nombre que queramos darle al operador. Esto nos puede decir que la sentencia "...spread" podria ser un caso particular de rest.
-
-## Métodos de Arreglos:
-Repasemos algunos métodos de arreglos importantes.
 
 #### Filter:
 Filter es un método de arreglo que evaluea los elementos de un arreglo y devuelve solo aquellos que cumplan una condicion. La condicion se la enviamos como arrow function.

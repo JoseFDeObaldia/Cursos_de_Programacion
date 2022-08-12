@@ -358,6 +358,10 @@ Esto mediante el uso de los métodos: `.addEventListener();` o `.documentQuerySe
 
 ---
 
-## Personalizar Boostrap con SASS:
+## 11. PERSONALIZAR BOOTSTRAP CON SASS:
 Las personalizaciones de bootstrap con sass vienen dadas de descargar una carpeta de archivos JS y SASS e importar los componentes a utilizar en un archivo SASS propio. Este nuevo archivo SASS al compilarse heredará todos los estilos de SASS de bootstrap además de las personalizaciones que le hayamos hecho. Finalmente esto se exportara en un archivo CSS el cual leera el navegador.
 El archivo CSS generado puede llegar a ser muy largo, así que es recomendable solo importar los elementos y componentes que sean pertinentes.
+
+---
+
+Fin del curso, espero sea de mucha útilidad! 😆😆
