@@ -87,7 +87,7 @@ _Castear_ en programación es una operación para cambiar el tipo de dato del va
 
     Sus ventajas son:
     - La ejecución es más veloz, ya que la inferencia de los tipos es anterior y el lenguaje no necesita verificarlos a la hora de ejecutarlos.
-    
+
     Sus desventajas son:
     - A la hora de programar es mucho más estricto y necesitas escribir más código, lo que alarga el tiempo de trabajo.
     - El compilador debe ejecutar una disciplina de tipos concreta. Es decir, se siguen unas normas concretas de asignación de variables, argumentos de funciones o valores de retorno.
@@ -118,7 +118,7 @@ En función de cual estructura utilicemos y para qué propósito, nuestros algor
 Luego, las estructuras de datos se estudian como conceptos sobre programación, y no sobre un lenguaje en específico, por lo que cada lenguaje puede tener diferentes implementaciones de estructuras de datos.
 
 ### **4.1. ¿Cuáles son los tipos de estructuras de datos?**
-Primero, debemos diferenciar entre estructura de dato estática y estructura de dato dinámica. Las **estructuras de datos estática**s son aquellas en las que el tamaño ocupado en memoria se define antes de que el programa se ejecute y no puede modificarse dicho tamaño durante la ejecución del programa, mientras que una **estructura de datos dinámica** es aquella en la que el tamaño ocupado en memoria puede modificarse durante la ejecución del programa.
+Primero, debemos diferenciar entre estructura de dato estática y estructura de dato dinámica. Las **estructuras de datos estáticas**, son aquellas en las que el tamaño ocupado en memoria se define antes de que el programa se ejecute y no puede modificarse dicho tamaño durante la ejecución del programa, mientras que una **estructura de datos dinámica** es aquella en la que el tamaño ocupado en memoria puede modificarse durante la ejecución del programa.
 
 Cada tipo de estructura dependerá del tipo de aplicación que se requiera. Existen una multitud de estructuras dedicadas al almacenamiento de datos, por lo que dejamos adjuntada una [lista de estructuras de datos](https://en.wikipedia.org/wiki/List_of_data_structures) para aquellos que deseen profundizar en el tema. Aquí veremos solo algunas que es imprescindible conocer.
 
@@ -1001,7 +1001,7 @@ end
 
 1. __Abstraccion:__ Es un concepto en donde se busca definir un objeto con las mínimas lineas de codigo, métodos y atributos posibles, y a su vez con la mayor generalidad posible.
 
-### **8.10. Lenguajes Basados en Prototipos**
+### **8.11. Lenguajes Basados en Prototipos**
 La programación basada en prototipos es un estilo de programacion, en donde los objetos se crean por herencia de otros objetos prototipos, más que por instanciacion de los mismos. Un lenguaje que sigue con esta linea es Javascript, donde todos los elementos son objetos y los mismos tienen una coleccion de atributos y métodos heredados de otros objetos más primitivos. Ej javascript, al declararse las variables, por ejemplo, heredan dos prototipos, el prototipo correspondiente al tipo de dato y el prototipo `object`. Este último es el prototipo más general de todos.
 
 Si estuvieramos en una consola de javascript (como la del navegador). Con el siguiente código podemos imprimir los dos prototipos asociados a la variable "valor". Para este caso serán el prototipo `number` y el prototipo `object`.
@@ -1029,6 +1029,3 @@ console.log(f.prototype.__proto__);
 ---
 
 Fin del curso. ¡Espero haya sido de tu ayuda! 👍👍
-
-
-

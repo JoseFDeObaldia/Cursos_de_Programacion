@@ -1,5 +1,0 @@
-Los cursos terminados son:
-Bootstrap 5
-SASS
-Markdown
-Fundamentos (faltaría agregar algoritmia).

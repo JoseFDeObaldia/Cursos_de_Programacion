@@ -1,0 +1,27 @@
+/* cuando la identidad de la marca lo define se puede crear una paleta de colores casi monocromática. Esta paleta de tonos verdes es un claro ejemplo, donde bajando la luminosidad de el color principal, obtenemos dos colores complementarios del mismo tono.*/
+.palleteOne {
+    --color-principal: #30391F;
+    --primer-complementario: #668A4C;
+    --segundo-complementario: #ACCC7B;
+    --color-oscuro: #464646;
+    --color-claro: #FFFFFF;
+}
+
+
+/*Como color principal uno oscuro y tirando a azul verdoso, y como primer complementario un amarillo oscuro y poco saturado, y acompañados por colores suaves y neutros que ayudan a relajar la estética del diseño.*/
+.palleteTwo {
+    --color-principal: #114358;
+    --primer-complementario: #F2AA1F;
+    --segundo-complementario: #F1ECE7;
+    --color-oscuro: #090909;
+    --color-claro: #FFFFFF;
+}
+
+
+/* Cuando el color principal es un color vivo, podemos usar solo un complementario neutro para suavizarlo. En esta paleta de colores azulada (por el color principal y el color oscuro) , el color complementario y el claro se tiñen de gris para dar luminosidad y contrastar.*/
+.palleteThree {
+ --color-principal: #276E90;
+ --primer-complementario: #CECFC9;
+ --color-oscuro: #0A3143;
+ --color-claro: #EFEFEF;
+}

@@ -6,7 +6,7 @@ Este repositorio es para agregar todos los cursos de programación que he tomado
 
 Los cursos están en constante actualización según voy aumentando mis conocimientos. Te invito a verlos y espero te ayuden a progresar como programador.
 
-Recomiendo ver los cursos en el siguiente orden, para así tener una formación ordenada:
+Recomiendo ver los cursos en el siguiente orden para así tener una formación ordenada:
 1. Fundamentos
 1. HTML
 1. CSS - CSSGrid - FlexBox

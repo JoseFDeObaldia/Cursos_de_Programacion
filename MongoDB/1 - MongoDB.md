@@ -1,13 +1,15 @@
 # Curso de MongoDB:
 Este archivo contiene lo necesaro para poder empezar a trabajar con Mongo DB y esta realizado siguiendo el curso de Victor Robles.
 
-## Base de datos no-relacionales:
+## 1. Bases de datos no-relacionales:
 Mongo DB es una base de dato del tipo no relacional o no-sql es decir que a diferencia de trabajar con tablas y un esquema de datos claro. Mongo DB trabaja con colecciones de documentos.
-Esto tiene algunas ventajas como es la velocidad, la sencillez y el esquema libre, como contras tenemos que el tener datos repetidos es muy frecuente.
+Esto tiene algunas ventajas como es la velocidad, la sencillez y el esquema libre, esto conforma a MOngoDB como una base de datos muy rápida y escalable, luego una desventaja sería que es propenso a almacentar datos repetidos.
 
-Al trabajar con Mongo DB no utilizamos el lenguaje SQL sino el lenguaje javascript. Los documentos se almacenan en forma de JSON binarios lo que mejora increiblemente la velocidad. Si descargamos Mongo DB y trabajamos con él de forma nativa, deberemos utilizar el cmd de mongo, llamado "Mongo Shell".
+Al trabajar con Mongo DB no utilizamos el lenguaje SQL sino un conjunto de comandos de Mongo los cuales se envian con algun programa que gestione la base de datos. Los documentos se almacenan en forma de JSON binarios lo que mejora increiblemente la velocidad. Si descargamos Mongo DB y trabajamos con él de forma nativa, deberemos utilizar el consola de comandos especifica de mongo, llamada "Mongo Shell".
 
-## Instalar MongoDB localmente:
+---
+
+## 2. Instalar MongoDB localmente:
 Podemos utilizar la base de datos de MongoDB localmente, esto nos servirá para realizar algunas pruebas. Debemos dirigirnos a la página web oficial de mongo y descargar la Comunity Versión para escritorio. La cual es la versión gratuita.
 Luego de descargarla debemos ejecutar el instalador. Es importante destacar que MongoDB nos ofrece instalarlo como servicio en la PC, esto es que el programa siempre corra en nuestro ordenador y así no tener que iniciarlo siempre. Por problemas de rendimiento esta opción no es la mejor para usuarios que no utilicen MongoDB de manera intensiva.
 Luego creamos en el disco local `C:\` una carpeta llamada "data" la cual contendrá otra carpeta a la que llamaremos "db" esto es así ya que MongoDB colocará todos los archivos de configuración en ella.
@@ -18,7 +20,9 @@ En la consola de mongo podemos ejecutar el comando `help`, con esto vemos una li
 
 En ultima instancia, si se desea tirar el servicio de MongoDB por linea de comandos, basta con cerrar el archivo de "mongod.exe";
 
-## Crear bases de datos en MongoDB:
+---
+
+## 3. Crear bases de datos en MongoDB:
 En primera instancia crearemos una base de datos en MongoDB pero a nuvel de linea de comandos.
 En mongo no tenemos un comando especifico para crear bases de datos por lo que se creará una base de datos siempre que le indiquemos por comandos una ruta a una base de datos la cual es ficticia y le carguemos una coleccion. 
 Por ejemplo:
@@ -30,17 +34,14 @@ Esto se hace con: `db.nombreColeccion.save({dato1: 'valor', dato2: 'valor'});`. 
 Luego si ejecutamos el comando `show dbs`, mongo nos mostrará 4 bases de datos: `config`, `admin`, `local` y `baseDeDatos1`.
 Esto porque "baseDeDtos1" posee ya, un contenido dentro. Incluso si navegamos a esta base con `use baseDeDatos1`. podemos ver las colecciones dentro con `show.collections` y mongo nos mostrará `nombreColeccion`.
 
-Por último si queremos buscar un archivo o documento dentro de esta base de datos podemos colocar `db.nombreColeccion.find();` y nos mostrará el documento especificado en el argumento de find.
+---
 
-Si el argumento no se especifica nos mostrará todos los documentos.
-
-
-## Conectarse a una base de datos MongoDB con Compass:
+## 4. Conectarse a una base de datos MongoDB con Compass:
 Para conectarse a una base de datos de manera visual podemos usar el software integrado con la descarga de mongo, este programa se llama MongoDB Compass. El uso de Compass es realmente intuitivo por lo que no es necesario extendernos mucho en él.
 
 Solo debemos recordar que para poder usar compass debemos estar corriendo el servicio de MongoDB.
 
-## Algunos comandos útiles de Mongo DB:
+## 5. Algunos comandos útiles de Mongo DB:
 1. `db.stats()`: Estadísticas de base de datos. Este comando proporcionará detalles de las bases de datos junto con varias colecciones y parámetros relacionados. Ejecutar este comando nos devolverá:
 ```json
 {
@@ -111,47 +112,49 @@ BulkWriteResult({
 { "_id" : ObjectId("5edf7be318b2c26b9dfe8cb1"), "code" : "P3", "Qty" : 0, "status" : "Dective" }
 ```
 
-6. `collectionName.find()`: Para buscar el documento almacenado en una colección, se puede utilizar el método find(). Si no se especifica el argumento se van a recuperar todos los documentos de la colección.
+---
 
-Este método se puede usar para recuperar solo los documentos requeridos, en función de algunas condiciones de la colección. MongoDB proporciona una lista de operadores de proyección y consulta para recuperar el valor del tipo BSON (JSON binarios).
+## BUSCAR DOCUMENTOS EN LA BASE DE DATOS
+6. `db.collectionName.find()`: Para buscar el documento almacenado en una colección, se puede utilizar el método find(). Si no se especifica el argumento se van a recuperar todos los documentos de la colección.
+
+7. `db.collectionName.find().pretty();` El método pretty() nos permite embellecer la salida de .find() indentandola como un formato JSON o BSON. Esto como se verá, resulta muy útil a la hora de requerir información directamente desde la shell de Mongo.
+
+
+El método "find()" se puede usar para recuperar solo los documentos requeridos en función de algunas condiciones de la colección. MongoDB proporciona una lista de operadores de proyección y consulta para recuperar el valor del tipo BSON (JSON binarios).
 
 Ejemplo 1: `collectionName.find({ condition });`
 ```js
 > db.geekFlareCollection.find({ Qty: { $eq: 100 }});
-{ "_id" : ObjectId("5ed3159eb6f2c2bb1edb86d1"), "code" : "P4", "Qty" : 100, "status" : "Inactive" }
+{ 
+    "_id" : ObjectId("5ed3159eb6f2c2bb1edb86d1"), 
+    "code" : "P4", 
+    "Qty" : 100, 
+    "status" : "Inactive" 
+}
 ```
 
 Ejemplo2: `collectionName.findOne();` Para recuperar un solo documento. La salida esta formateada.
 ```js
 > db.geekFlareCollection.findOne();
 { 
-        "_id" : ObjectId("5ed31186b6f2c2bb1edb86ce"), 
-        "code" : "P1",
+    "_id" : ObjectId("5ed31186b6f2c2bb1edb86ce"), 
+    "code" : "P1",
 	"Qty" : 200, 
 	"status" : "Inactive" 
 }
 ```
 
-7. `collectionName.find().pretty();` El método pretty nos permite embellecer la salida de .find(). Con lo cual nos entrega una salida ya formatedada.
-```js
-> db.geekFlareCollection.find({ Qty: { $eq: 100 }}).pretty();
-{
-        "_id" : ObjectId("5ed3159eb6f2c2bb1edb86d1"),
-        "code" : "P4",
-        "Qty" : 100,
-        "status" : "Inactive"
-}
-```
+## ACTUALIZAR UN DOCUMENTO
 
 8. `collectionName.update({KeyToUpdate},{Set Command});`: Actualizar documento en una colección. MongoDB proporciona el método update(); para establecer nuevos valores, para claves existentes en documentos. El comando de actualización brinda detalles de documentos modificados y coincidentes.
 
 ```js
-> db.geekFlareCollection.find()
+> db.collectionName.find()
 { "_id" : ObjectId("5edf3f67d6bfbd8125f58cfb"), "product" : "bottles", "Qty" : 100 }
 { "_id" : ObjectId("5edf3f67d6bfbd8125f58cfc"), "product" : "bread", "Qty" : 20 }
 { "_id" : ObjectId("5edf3f67d6bfbd8125f58cfd"), "product" : "yogurt", "Qty" : 30 }
 
-> db.geekFlareCollection.update({"product" : "bottles"},{$set : {"Qty": 10}}  )
+> db.collectionName.update({"product" : "bottles"},{$set : {"Qty": 10}}  )
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 
 > db.geekFlareCollection.find()
@@ -159,18 +162,21 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 { "_id" : ObjectId("5edf3f67d6bfbd8125f58cfc"), "product" : "bread", "Qty" : 20 }
 { "_id" : ObjectId("5edf3f67d6bfbd8125f58cfd"), "product" : "yogurt", "Qty" : 30 }
 
->  db.geekFlareCollection.find()
+>  db.collectionName.find()
 { "_id" : ObjectId("5edf3f67d6bfbd8125f58cfb"), "product" : "bottles", "Qty" : 10 }
 { "_id" : ObjectId("5edf3f67d6bfbd8125f58cfc"), "product" : "bread", "Qty" : 20 }
 { "_id" : ObjectId("5edf3f67d6bfbd8125f58cfd"), "product" : "yogurt", "Qty" : 30 }
 ```
-9. `updateOne();` : Para actualizar un solo documento tenemos updateOne(), su sintaxis de uso es la siguiente: `collectionName.updateOne({SingleKeyToUpdate},{Set Command});`
+
+9. `updateOne();`: Para actualizar un solo documento tenemos updateOne(), su sintaxis de uso es la siguiente: `collectionName.updateOne({SingleKeyToUpdate},{Set Command});`
 
 ```js
 > db.geekFlareCollection.updateOne({"product" : "bottles"},{$set : {"Qty": 40}}  )
 { "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
 <strong>updateMany()</strong> : Para actualizar varios documentos en alguna condición, MongoDB tiene updateMany() método.
 ```
+
+## ELIMINAR UN DOCUMENTO DE LA COLECCION
 
 10. Eliminar documento de una colección: Para eliminar un documento MongoDB consta de deleteOne() y deleteMany(). La sintaxis de los métodos de eliminación es:
 
@@ -188,7 +194,7 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 ```
 
 12. Cambiar el nombre de una colección: MongoDB proporciona el método renameCollection(), para renombrar una coleccion de documentos.
-Sintaxis: `collectionName.renameCollection(newCollectionName)`.
+Sintaxis: `db.collectionName.renameCollection("newCollectionName")`.
 
 13. Crear índice en documento:
 Los índices son una estructura de datos especial que almacena una pequeña parte del conjunto de datos de la colección de forma fácil de recorrer. Los índices admiten el orden ascendente y descendente de los valores de los campos y, por lo tanto, facilitan un mejor rendimiento durante la recuperación. 
@@ -206,7 +212,8 @@ MongoDB proporciona un índice por default, llamado "default_id" pero admite la 
 }
 ```
 
-- Cree un índice en varios campos. `collectionName.createIndex({Key1:1, Key2:1, …, Keyn:1});` Ejemplo:
+- Cree un índice en varios campos. `collectionName.createIndex({Key1:1, Key2:1, …, Keyn:1});` 
+Ejemplo:
 ```js
 > db.geekFlareCollection.createIndex({"product" : 1,"Qty":-1})
 {
@@ -471,7 +478,6 @@ db.createUser(
     }
 );
 Enter password:
-
 
 Successfully added user: {
         "user" : "AdminUser",

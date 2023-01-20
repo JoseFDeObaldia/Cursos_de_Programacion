@@ -368,5 +368,3 @@ Dentro del button se pueden poner imágenes e íconos:
 
 
 Fin del documento, espero sea de ayuda para el futuro jose o para el que lo necesite.
-
-
